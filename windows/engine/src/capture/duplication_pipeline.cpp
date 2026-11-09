@@ -132,9 +132,9 @@ std::optional<PipelineError> DuplicationPipeline::Worker::initialize() {
     // Limited-range BT.709 black: Y 16, UV 128 (the frame the paused state keeps sending).
     const std::size_t black_bytes =
         static_cast<std::size_t>(settings.width) * settings.height * 3 / 2;
-    std::vector<std::uint8_t> black_data(black_bytes, 0x80);
+    std::vector<std::uint8_t> black_data(black_bytes, std::uint8_t{0x80});
     std::fill_n(black_data.begin(), static_cast<std::size_t>(settings.width) * settings.height,
-                0x10);
+                std::uint8_t{0x10});
     const D3D11_SUBRESOURCE_DATA black_init{black_data.data(), settings.width,
                                             static_cast<UINT>(black_bytes)};
     if (FAILED(target.device->CreateTexture2D(&desc, &black_init, &black))) {
