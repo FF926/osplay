@@ -6,6 +6,8 @@ namespace osplay::engine {
 namespace {
 
 constexpr DWORD kBusyWaitMilliseconds = 2000;
+constexpr DWORD kInstanceRecreationMilliseconds = 20;
+constexpr int kConnectAttempts = 15;
 
 DisplayError error_for_open_failure(DWORD error) {
     switch (error) {
@@ -24,11 +26,15 @@ DisplayError error_for_open_failure(DWORD error) {
 win::Expected<std::unique_ptr<PipeHelperChannel>, DisplayError> PipeHelperChannel::connect() {
     using Result = win::Expected<std::unique_ptr<PipeHelperChannel>, DisplayError>;
 
-    // The helper serves one client at a time; a busy pipe gets one bounded wait, because the
-    // other client may only be closing. A session in progress keeps it busy for much longer.
+    // The helper serves one client at a time; a busy pipe gets bounded waits, because the other
+    // client may only be closing. A session in progress keeps it busy for much longer. Between
+    // clients the helper has no listening instance for a moment (it recreates one as soon as a
+    // client leaves), so a connect right after another client's disconnect — the role swap's
+    // health check and the new host session are such a pair — lands in that gap and reports
+    // ERROR_FILE_NOT_FOUND. Retry until the instance is back instead of giving up (#41).
     HANDLE pipe = INVALID_HANDLE_VALUE;
     DWORD last_error = ERROR_SUCCESS;
-    for (int attempt = 0; attempt < 2 && pipe == INVALID_HANDLE_VALUE; ++attempt) {
+    for (int attempt = 0; attempt < kConnectAttempts && pipe == INVALID_HANDLE_VALUE; ++attempt) {
         // SECURITY_IDENTIFICATION lets the helper check who we are without acting as us.
         pipe = CreateFileW(win::helper::kPipeName, GENERIC_READ | GENERIC_WRITE, 0, nullptr,
                            OPEN_EXISTING, SECURITY_SQOS_PRESENT | SECURITY_IDENTIFICATION, nullptr);
@@ -36,11 +42,14 @@ win::Expected<std::unique_ptr<PipeHelperChannel>, DisplayError> PipeHelperChanne
             break;
         }
         last_error = GetLastError();
-        if (last_error != ERROR_PIPE_BUSY) {
-            break;
-        }
-        if (!WaitNamedPipeW(win::helper::kPipeName, kBusyWaitMilliseconds)) {
-            last_error = GetLastError();
+        if (last_error == ERROR_PIPE_BUSY) {
+            if (!WaitNamedPipeW(win::helper::kPipeName, kBusyWaitMilliseconds)) {
+                last_error = GetLastError();
+                break;
+            }
+        } else if (last_error == ERROR_FILE_NOT_FOUND && attempt + 1 < kConnectAttempts) {
+            Sleep(kInstanceRecreationMilliseconds);
+        } else {
             break;
         }
     }
