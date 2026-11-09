@@ -103,7 +103,7 @@ void PipeServer::serve_one_client() {
 
     log_.info("Client connected");
     serve(pipe.get());
-    handler_.reset();
+    handler_.reset_if_configured();
     DisconnectNamedPipe(pipe.get());
     log_.info("Client disconnected");
 }

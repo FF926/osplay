@@ -157,8 +157,13 @@ bool VddDevices::is_enabled(std::size_t index) {
     if (CM_Get_DevNode_Status(&status, &problem, device->data.DevInst, 0) != CR_SUCCESS) {
         return false;
     }
-    const bool disabled = (status & DN_HAS_PROBLEM) != 0 && problem == CM_PROB_DISABLED;
-    return !disabled;
+    // A device with any problem state (failed start, stuck removal, ...) cannot stream, and
+    // SetupAPI changes on it can stall the helper for minutes. Leave such devices alone; the
+    // driver's installer or a reboot sorts them out.
+    if ((status & DN_HAS_PROBLEM) != 0) {
+        return false;
+    }
+    return true;
 }
 
 bool VddDevices::set_enabled(std::size_t index, bool enabled) {

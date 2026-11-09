@@ -55,6 +55,10 @@ public:
     /// (to clear monitors left behind by a crash) and whenever the client disconnects.
     void reset();
 
+    /// As reset, but only sweeps when this client configured monitors: health checks and idle
+    /// clients leave nothing behind, and the sweep must not delay the next client's connection.
+    void reset_if_configured();
+
 private:
     Response configure(const std::vector<MonitorConfig>& monitors);
     /// Adds the named devices that do not exist yet and enables them; the others are untouched.

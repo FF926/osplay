@@ -62,6 +62,13 @@ void RequestHandler::reset() {
     }
 }
 
+void RequestHandler::reset_if_configured() {
+    if (monitors_.empty()) {
+        return;
+    }
+    reset();
+}
+
 Response RequestHandler::configure(const std::vector<MonitorConfig>& monitors) {
     // decode_request already validates; requests built in-process are checked here.
     if (!is_valid(monitors)) {
