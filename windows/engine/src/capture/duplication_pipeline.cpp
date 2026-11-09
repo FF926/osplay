@@ -129,17 +129,28 @@ std::optional<PipelineError> DuplicationPipeline::Worker::initialize() {
             return PipelineError::EncoderUnavailable;
         }
     }
-    // Limited-range BT.709 black: Y 16, UV 128 (the frame the paused state keeps sending).
+    // Limited-range BT.709 black: Y 16, UV 128 (the frame the paused state keeps sending). NV12
+    // textures reject initial data on some drivers, so the bytes go through a staging texture.
     const std::size_t black_bytes =
         static_cast<std::size_t>(settings.width) * settings.height * 3 / 2;
     std::vector<std::uint8_t> black_data(black_bytes, std::uint8_t{0x80});
     std::fill_n(black_data.begin(), static_cast<std::size_t>(settings.width) * settings.height,
                 std::uint8_t{0x10});
+    D3D11_TEXTURE2D_DESC staging_desc = desc;
+    staging_desc.Usage = D3D11_USAGE_STAGING;
+    staging_desc.BindFlags = 0;
+    staging_desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+    staging_desc.MiscFlags = 0;
     const D3D11_SUBRESOURCE_DATA black_init{black_data.data(), settings.width,
                                             static_cast<UINT>(black_bytes)};
-    if (FAILED(target.device->CreateTexture2D(&desc, &black_init, &black))) {
+    ComPtr<ID3D11Texture2D> staging;
+    if (FAILED(target.device->CreateTexture2D(&staging_desc, &black_init, &staging))) {
         return PipelineError::EncoderUnavailable;
     }
+    if (FAILED(target.device->CreateTexture2D(&desc, nullptr, &black))) {
+        return PipelineError::EncoderUnavailable;
+    }
+    target.context->CopyResource(black.Get(), staging.Get());
     converter = std::make_unique<Nv12Converter>(target.device, target.context, settings.width,
                                                 settings.height, settings.refresh_millihertz);
     auto created = MfH264Encoder::create(
