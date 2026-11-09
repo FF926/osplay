@@ -318,6 +318,15 @@ internal sealed unsafe class EngineHost : EngineSession
 
     protected override EngineResult Suspend(nint handle) => NativeMethods.HostSuspend(handle);
 
+    /// <summary>Host pause (fork addition): viewers' streams encode black until resumed.</summary>
+    public Task SetPausedAsync(bool paused) => Native.Run(() =>
+    {
+        if (Handle != 0)
+        {
+            _ = NativeMethods.HostSetPaused(Handle, paused ? 1 : 0);
+        }
+    });
+
     protected override EngineResult AnswerRoleSwap(nint handle, RoleSwapAnswer answer) =>
         NativeMethods.HostAnswerRoleSwap(handle, answer);
 }

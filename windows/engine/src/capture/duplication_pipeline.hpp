@@ -29,6 +29,12 @@ public:
 
     void request_keyframe() override { keyframe_requested_ = true; }
     void set_bitrate(std::uint32_t kbps) override { requested_bitrate_kbps_ = kbps; }
+    void set_paused(bool paused) override {
+        // Resuming sends a keyframe, so the viewer's first picture after a pause is complete.
+        if (paused_.exchange(paused, std::memory_order_relaxed) != paused && !paused) {
+            keyframe_requested_ = true;
+        }
+    }
     [[nodiscard]] std::optional<MonitorRect> monitor_rect() const override { return rect_; }
 
 private:
@@ -38,6 +44,7 @@ private:
 
     std::atomic<bool> keyframe_requested_{true};
     std::atomic<std::uint32_t> requested_bitrate_kbps_{0}; // 0: no change waiting
+    std::atomic<bool> paused_{false};
     std::atomic<bool> stopping_{false};
     std::optional<MonitorRect> rect_;
     std::thread thread_;

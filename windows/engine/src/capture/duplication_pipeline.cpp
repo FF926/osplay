@@ -52,6 +52,8 @@ struct DuplicationPipeline::Worker {
     DuplicationTarget target;
     ComPtr<IDXGIOutputDuplication> duplication;
     ComPtr<ID3D11Texture2D> desktop;
+    /// Solid black, encoded instead of the desktop while paused (Y 16, UV 128).
+    ComPtr<ID3D11Texture2D> black;
     std::array<ComPtr<ID3D11Texture2D>, kNv12Ring> nv12{};
     std::size_t next_slot = 0;
     std::unique_ptr<Nv12Converter> converter;
@@ -127,6 +129,17 @@ std::optional<PipelineError> DuplicationPipeline::Worker::initialize() {
             return PipelineError::EncoderUnavailable;
         }
     }
+    // Limited-range BT.709 black: Y 16, UV 128 (the frame the paused state keeps sending).
+    const std::size_t black_bytes =
+        static_cast<std::size_t>(settings.width) * settings.height * 3 / 2;
+    std::vector<std::uint8_t> black_data(black_bytes, 0x80);
+    std::fill_n(black_data.begin(), static_cast<std::size_t>(settings.width) * settings.height,
+                0x10);
+    const D3D11_SUBRESOURCE_DATA black_init{black_data.data(), settings.width,
+                                            static_cast<UINT>(black_bytes)};
+    if (FAILED(target.device->CreateTexture2D(&desc, &black_init, &black))) {
+        return PipelineError::EncoderUnavailable;
+    }
     converter = std::make_unique<Nv12Converter>(target.device, target.context, settings.width,
                                                 settings.height, settings.refresh_millihertz);
     auto created = MfH264Encoder::create(
@@ -173,12 +186,16 @@ bool DuplicationPipeline::Worker::step() {
         return true;
     }
     if (SUCCEEDED(acquired)) {
-        if (info.LastPresentTime.QuadPart != 0 && capture_frame(resource.Get())) {
-            ++stats.images;
-            pacer.on_new_image();
-            pending_captured_at = info.LastPresentTime.QuadPart;
+        // While paused the desktop is not read: the encoded frames are black and the pointer is
+        // withheld, so the viewer shows nothing of this PC.
+        if (!owner->paused_.load(std::memory_order_relaxed)) {
+            if (info.LastPresentTime.QuadPart != 0 && capture_frame(resource.Get())) {
+                ++stats.images;
+                pacer.on_new_image();
+                pending_captured_at = info.LastPresentTime.QuadPart;
+            }
+            update_pointer(info);
         }
-        update_pointer(info);
         static_cast<void>(duplication->ReleaseFrame()); // a lost duplication shows up next time
     }
     const bool running = encode_if_needed() && poll_encoder();
@@ -210,7 +227,7 @@ UINT DuplicationPipeline::Worker::acquire_timeout() const {
 }
 
 bool DuplicationPipeline::Worker::encode_if_needed() {
-    if (desktop == nullptr) {
+    if (desktop == nullptr && !owner->paused_.load(std::memory_order_relaxed)) {
         return true; // nothing captured yet; a pending keyframe request waits for the first image
     }
     if (const std::uint32_t kbps = owner->requested_bitrate_kbps_.exchange(0); kbps != 0) {
@@ -344,7 +361,9 @@ void DuplicationPipeline::Worker::update_pointer(const DXGI_OUTDUPL_FRAME_INFO& 
 bool DuplicationPipeline::Worker::encode(bool keyframe, std::int64_t captured_at) {
     ID3D11Texture2D* slot = nv12.at(next_slot).Get();
     next_slot = (next_slot + 1) % nv12.size();
-    if (!converter->convert(desktop.Get(), slot)) {
+    if (owner->paused_.load(std::memory_order_relaxed)) {
+        target.context->CopyResource(slot, black.Get());
+    } else if (!converter->convert(desktop.Get(), slot)) {
         return false;
     }
     last_submit = performance_counter();

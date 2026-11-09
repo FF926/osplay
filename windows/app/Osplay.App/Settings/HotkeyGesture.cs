@@ -19,6 +19,9 @@ public sealed record HotkeyGesture(uint Modifiers, uint VirtualKey)
     /// <summary>The stats overlay shortcut (Phase 13): Ctrl+Alt+Shift+I.</summary>
     public static HotkeyGesture DefaultStats { get; } = new(Control | Alt | Shift, 0x49);
 
+    /// <summary>The host pause shortcut (fork addition): Ctrl+Alt+Shift+H.</summary>
+    public static HotkeyGesture DefaultPause { get; } = new(Control | Alt | Shift, 0x48);
+
     /// <summary>A gesture from a WPF key press, or null without Ctrl, Alt or Win (Shift alone types).</summary>
     public static HotkeyGesture? From(Key key, ModifierKeys modifiers)
     {

@@ -504,6 +504,16 @@ osplay_engine_result osplay_engine_host_suspend(osplay_engine_host* host) {
     });
 }
 
+osplay_engine_result osplay_engine_host_set_paused(osplay_engine_host* host, int paused) {
+    return guarded([&] {
+        if (host == nullptr || host->orchestrator == nullptr) {
+            return OSPLAY_ENGINE_ERROR_INVALID_ARGUMENT;
+        }
+        host->orchestrator->set_paused(paused != 0);
+        return OSPLAY_ENGINE_OK;
+    });
+}
+
 void osplay_engine_host_destroy(osplay_engine_host* host) {
     // Taking ownership back from the caller.
     const std::unique_ptr<osplay_engine_host> owned(host);

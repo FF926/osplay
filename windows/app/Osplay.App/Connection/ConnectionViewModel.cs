@@ -51,6 +51,9 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
     private CancellationTokenSource? _autoConnectTimeout;
     private GlobalHotkey? _swapHotkey;
     private GlobalHotkey? _statsHotkey;
+    /// <summary>Host pause (fork addition): viewers' streams are blanked until it is toggled back.</summary>
+    private GlobalHotkey? _pauseHotkey;
+    private bool _streamsPaused;
     private ushort _sharePort;
     private readonly ConsoleDisplayMonitor _display = new();
     private ViewedHost? _viewedHost;
@@ -222,6 +225,7 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
         Microsoft.Win32.SystemEvents.PowerModeChanged -= OnPowerModeChanged;
         _display.Dispose();
         _statsHotkey?.Dispose();
+        _pauseHotkey?.Dispose();
         _gate.Dispose();
         _autoConnectTimeout?.Dispose();
         _swapHotkey?.Dispose();
@@ -240,6 +244,9 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
         await RefreshMonitorsAsync().ConfigureAwait(true);
         await CheckHealthAsync().ConfigureAwait(true);
         await RefreshNetworkAsync().ConfigureAwait(true);
+        // Host pause (fork addition): a fixed shortcut — the Settings page has no recorder for it.
+        _pauseHotkey = GlobalHotkey.Register(HotkeyGesture.DefaultPause,
+            () => _ = ToggleStreamsPausedAsync());
     }
 
     /// <summary>Ends every session and withdraws the Bonjour service; called before quitting.</summary>
@@ -994,6 +1001,18 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
     private void RegisterStatsHotkey() =>
         _statsHotkey ??= GlobalHotkey.Register(
             _settings.StatsHotkey, () => _settings.ShowsStatsOverlay = !_settings.ShowsStatsOverlay);
+
+    /// <summary>
+    /// Host pause (fork addition): blanks every viewer's streams or brings the picture back.
+    /// </summary>
+    private async Task ToggleStreamsPausedAsync()
+    {
+        _streamsPaused = !_streamsPaused;
+        foreach (HostEntry entry in ServingHosts())
+        {
+            await entry.Host.SetPausedAsync(_streamsPaused).ConfigureAwait(true);
+        }
+    }
 
     private void UnregisterStatsHotkey()
     {

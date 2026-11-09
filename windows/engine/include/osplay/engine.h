@@ -295,6 +295,12 @@ OSPLAY_ENGINE_API osplay_engine_result osplay_engine_host_stop(osplay_engine_hos
 /* As _stop, but tells the viewer this PC is going to sleep, so it waits for it to come back. */
 OSPLAY_ENGINE_API osplay_engine_result osplay_engine_host_suspend(osplay_engine_host* host);
 
+/* Pauses or resumes every connected viewer's streams (`paused` is 0 or 1): paused streams encode
+   black frames and send no pointer, so the viewers show nothing of this PC. The session stays
+   up, and a viewer that connects later starts paused too. */
+OSPLAY_ENGINE_API osplay_engine_result osplay_engine_host_set_paused(osplay_engine_host* host,
+                                                                     int paused);
+
 /* Stops everything, removes the virtual monitor and releases the handle. Accepts NULL. */
 OSPLAY_ENGINE_API void osplay_engine_host_destroy(osplay_engine_host* host);
 

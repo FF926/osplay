@@ -76,6 +76,11 @@ public:
     virtual void request_keyframe() = 0;
     /// The link changed: encode at this average bitrate from the next frame. Never blocks.
     virtual void set_bitrate(std::uint32_t kbps) = 0;
+    /// Paused pipelines encode black frames and hold the pointer back, so the viewer shows
+    /// nothing of this PC. Capture keeps running and the session stays up. Never blocks.
+    virtual void set_paused(bool paused) {
+        (void)paused;
+    }
     [[nodiscard]] virtual std::optional<MonitorRect> monitor_rect() const = 0;
 };
 

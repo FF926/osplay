@@ -92,6 +92,10 @@ public:
     /// The session ended: stop capturing and remove the monitors.
     void on_session_closed();
 
+    /// Pauses or resumes every stream: paused pipelines encode black and hold the pointer back,
+    /// so the viewers show nothing of this PC. A viewer that connects later starts paused too.
+    void set_paused(bool paused);
+
     /// Blocks until queued work has run (tests).
     void wait_idle();
 
@@ -147,6 +151,7 @@ private:
     std::map<std::uint8_t, Stream> streams_; // worker thread only
     bool monitors_added_ = false;            // worker thread only
     std::atomic<bool> failed_{false};
+    std::atomic<bool> paused_{false}; // applied to every pipeline, also ones started later
 
     std::mutex mutex_;
     std::condition_variable changed_;

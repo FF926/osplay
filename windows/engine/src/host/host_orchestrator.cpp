@@ -112,6 +112,18 @@ void HostOrchestrator::on_session_closed() {
     post([this] { stop_streaming(); });
 }
 
+void HostOrchestrator::set_paused(bool paused) {
+    // The flag also covers viewers that connect later: open_streams applies it to new pipelines.
+    paused_.store(paused, std::memory_order_relaxed);
+    post([this, paused] {
+        for (auto& [stream_id, stream] : streams_) {
+            if (stream.pipeline) {
+                stream.pipeline->set_paused(paused);
+            }
+        }
+    });
+}
+
 void HostOrchestrator::wait_idle() {
     std::unique_lock lock(mutex_);
     changed_.wait(lock, [this] { return tasks_.empty() && !busy_; });
@@ -235,6 +247,7 @@ bool HostOrchestrator::open_streams() {
             return false;
         }
         stream.pipeline = std::move(pipeline.value());
+        stream.pipeline->set_paused(paused_.load(std::memory_order_relaxed));
     }
     return true;
 }

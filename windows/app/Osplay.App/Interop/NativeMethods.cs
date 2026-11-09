@@ -153,6 +153,10 @@ internal static unsafe partial class NativeMethods
     [UnmanagedCallConv(CallConvs = [typeof(System.Runtime.CompilerServices.CallConvCdecl)])]
     public static partial EngineResult HostSuspend(nint host);
 
+    [LibraryImport(_engine, EntryPoint = "osplay_engine_host_set_paused")]
+    [UnmanagedCallConv(CallConvs = [typeof(System.Runtime.CompilerServices.CallConvCdecl)])]
+    public static partial EngineResult HostSetPaused(nint host, int paused);
+
     [LibraryImport(_engine, EntryPoint = "osplay_engine_viewer_suspend")]
     [UnmanagedCallConv(CallConvs = [typeof(System.Runtime.CompilerServices.CallConvCdecl)])]
     public static partial EngineResult ViewerSuspend(nint viewer);
