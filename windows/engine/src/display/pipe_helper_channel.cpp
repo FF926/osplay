@@ -6,8 +6,8 @@ namespace osplay::engine {
 namespace {
 
 constexpr DWORD kBusyWaitMilliseconds = 2000;
-constexpr DWORD kInstanceRecreationMilliseconds = 20;
-constexpr int kConnectAttempts = 15;
+constexpr DWORD kInstanceRecreationMilliseconds = 100;
+constexpr int kConnectAttempts = 30; // up to ~3 s while the helper recovers between clients
 
 DisplayError error_for_open_failure(DWORD error) {
     switch (error) {
