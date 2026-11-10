@@ -231,9 +231,11 @@ final class ConnectionViewModel {
             core: core, decoders: dependencies.decoders, presenters: dependencies.presenters,
             power: dependencies.power,
             // (fork) A viewer setting shows the stream in a movable window instead of a full-screen
-            // display, so the extended screen can sit on the desktop like a normal window.
-            target: { [settings = dependencies.settings, name = device.advertisement.name] stream in
-                if settings.viewerShowsInWindow {
+            // display, so the extended screen can sit on the desktop like a normal window. Read
+            // once at connect: the session runs on engine threads, off the main actor.
+            let showsInWindow = settings.viewerShowsInWindow
+            target: { [name = device.advertisement.name, showsInWindow] stream in
+                if showsInWindow {
                     return .window(title: name)
                 }
                 return places[stream.monitorID].map(PresentationTarget.fullScreen)

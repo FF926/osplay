@@ -622,7 +622,7 @@ WindowsViewerStreamFactory::start(const osplay_stream_config& stream, const View
                                   bool visible, ViewerStreamSink& sink) {
     using Result = win::Expected<std::unique_ptr<ViewerStream>, PipelineError>;
     auto viewer_stream =
-        std::make_unique<WindowsViewerStream>(*presentation_, stream, monitor, sink);
+        std::make_unique<WindowsViewerStream>(*presentation_, stream, monitor, sink, windowed_);
     if (const auto failure = viewer_stream->start(visible)) {
         return Result::failure(*failure);
     }
