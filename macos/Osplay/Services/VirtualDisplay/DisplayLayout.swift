@@ -12,6 +12,14 @@ struct ArrangedMonitor: Codable, Hashable, Sendable, Identifiable {
     var frame: CGRect { CGRect(origin: origin, size: size) }
 }
 
+/// (fork) Where one of a viewer's virtual displays ended: its final resolution and its origin
+/// next to this Mac's main display. The next session for the same viewer starts there, so a
+/// resolution or position the user picked in System Settings survives reconnects and swaps.
+struct SavedDisplayState: Codable, Hashable, Sendable {
+    let resolution: DisplayResolution
+    let origin: CGPoint
+}
+
 /// Keeps an arrangement valid the way System Settings does: displays never overlap, and a dropped
 /// display ends up touching the main display or another display along an edge.
 enum DisplayLayout {

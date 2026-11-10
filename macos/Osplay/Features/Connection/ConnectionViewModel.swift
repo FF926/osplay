@@ -428,10 +428,10 @@ final class ConnectionViewModel {
                         peerID: Data(key), hiDPI: settings.hiDPIChoice(for: deviceID),
                         arrangement: settings.arrangement(for: deviceID), quality: settings.qualityPreset,
                         streamSize: settings.streamSize,
-                        savedResolutions: settings.savedResolutions(for: deviceID),
-                        saveResolutions: { [settings] resolutions in
+                        savedDisplays: settings.savedDisplays(for: deviceID),
+                        saveDisplays: { [settings] displays in
                             Task { @MainActor in
-                                settings.setSavedResolutions(resolutions, for: deviceID)
+                                settings.setSavedDisplays(displays, for: deviceID)
                             }
                         })
                 }

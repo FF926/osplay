@@ -59,10 +59,11 @@ final class AppSettings {
         didSet { save(hiDPIChoices, forKey: Key.hiDPIChoices) }
     }
 
-    /// Per paired device (by device ID), the resolution each of its monitors ended at (fork): the
-    /// user may have picked another mode in System Settings, and the next session starts there.
-    private(set) var savedResolutions: [String: [UInt8: DisplayResolution]] {
-        didSet { save(savedResolutions, forKey: Key.savedResolutions) }
+    /// Per paired device (by device ID), where each of its monitors' displays ended (fork): the
+    /// user may have picked another mode or moved them in System Settings, and the next session
+    /// starts there.
+    private(set) var savedDisplays: [String: [UInt8: SavedDisplayState]] {
+        didSet { save(savedDisplays, forKey: Key.savedDisplays) }
     }
 
     private let defaults: UserDefaults
@@ -81,12 +82,11 @@ final class AppSettings {
         excludedDisplays = Self.load(Set<String>.self, from: defaults, forKey: Key.excludedDisplays) ?? []
         hiDPIChoices = Self.load([String: HiDPIChoice].self, from: defaults, forKey: Key.hiDPIChoices) ?? [:]
         arrangements = Self.load([String: [ArrangedMonitor]].self, from: defaults, forKey: Key.arrangements) ?? [:]
-        savedResolutions =
-            Self.load(
-                [String: [UInt8: DisplayResolution]].self,
-                from: defaults,
-                forKey: Key.savedResolutions
-            ) ?? [:]
+        savedDisplays = Self.load(
+            [String: [UInt8: SavedDisplayState]].self,
+            from: defaults,
+            forKey: Key.savedDisplays
+        ) ?? [:]
     }
 
     /// Per paired device (by device ID), where each of its monitors sits next to this Mac.
@@ -102,12 +102,12 @@ final class AppSettings {
         arrangements[deviceID] = arrangement.isEmpty ? nil : arrangement
     }
 
-    func savedResolutions(for deviceID: String) -> [UInt8: DisplayResolution] {
-        savedResolutions[deviceID] ?? [:]
+    func savedDisplays(for deviceID: String) -> [UInt8: SavedDisplayState] {
+        savedDisplays[deviceID] ?? [:]
     }
 
-    func setSavedResolutions(_ resolutions: [UInt8: DisplayResolution], for deviceID: String) {
-        savedResolutions[deviceID] = resolutions.isEmpty ? nil : resolutions
+    func setSavedDisplays(_ displays: [UInt8: SavedDisplayState], for deviceID: String) {
+        savedDisplays[deviceID] = displays.isEmpty ? nil : displays
     }
 
     func hiDPIChoice(for deviceID: String) -> HiDPIChoice {
@@ -142,7 +142,7 @@ final class AppSettings {
         static let statsHotkey = "statsHotkey"
         static let statsOverlay = "showsStatsOverlay"
         static let hiDPIChoices = "hiDPIChoices"
-        static let savedResolutions = "savedResolutions"
+        static let savedDisplays = "savedDisplays"
         static let onboarding = "hasCompletedOnboarding"
         static let arrangements = "displayArrangements"
         static let excludedDisplays = "excludedViewerDisplays"

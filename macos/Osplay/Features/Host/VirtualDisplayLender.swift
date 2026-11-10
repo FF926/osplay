@@ -14,12 +14,13 @@ struct LentDisplay: Sendable, Hashable {
 /// without the window server.
 @MainActor
 protocol DisplayLending: AnyObject, Sendable {
-    /// One display per monitor, ready, in the saved resolution for that monitor when there is
-    /// one, otherwise in the HiDPI choice's resolution — placed as `arrangement` says when it
-    /// still fits these monitors (a row to the right otherwise). All or nothing.
+    /// One display per monitor, ready, in the saved display state for that monitor when there is
+    /// one (resolution and origin), otherwise in the HiDPI choice's resolution — placed as
+    /// `arrangement` says when it still fits these monitors (a row to the right otherwise). All
+    /// or nothing.
     func lend(
         _ monitors: [MonitorDescription], peerID: Data, hiDPI: HiDPIChoice,
-        arrangement: [ArrangedMonitor], saved: [UInt8: DisplayResolution]
+        arrangement: [ArrangedMonitor], saved: [UInt8: SavedDisplayState]
     ) async throws(VirtualDisplayError) -> [LentDisplay]
     func returnDisplay(_ displayID: CGDirectDisplayID)
     func returnAll()
@@ -47,7 +48,7 @@ final class VirtualDisplayLender: DisplayLending {
 
     func lend(
         _ monitors: [MonitorDescription], peerID: Data, hiDPI: HiDPIChoice,
-        arrangement: [ArrangedMonitor], saved: [UInt8: DisplayResolution]
+        arrangement: [ArrangedMonitor], saved: [UInt8: SavedDisplayState]
     ) async throws(VirtualDisplayError) -> [LentDisplay] {
         returnAll()
         do throws(VirtualDisplayError) {
@@ -67,13 +68,21 @@ final class VirtualDisplayLender: DisplayLending {
             }
             let arranged = DisplayLayout.arrangement(
                 for: sizes, saved: arrangement, main: DisplayArranger.mainDisplaySize)
+            // (fork) a display that ended at a known origin starts there again
+            let placed = arranged.map { placed in
+                var updated = placed
+                if let state = saved[placed.id] {
+                    updated.origin = state.origin
+                }
+                return updated
+            }
             do throws(VirtualDisplayError) {
-                try arrange(zip(lent, arranged).map { ($0.1.displayID, $1.origin) })
+                try arrange(zip(lent, placed).map { ($0.1.displayID, $1.origin) })
             } catch {
                 // The displays work anywhere; the user can still move them in Osplay's Settings.
                 Log.virtualDisplay.error("Arranging displays failed: \(String(describing: error), privacy: .public)")
             }
-            return zip(lent, arranged).map { pair, arrangement in
+            return zip(lent, placed).map { pair, arrangement in
                 LentDisplay(monitor: pair.0, displayID: pair.1.displayID, arrangement: arrangement)
             }
         } catch {
@@ -95,22 +104,22 @@ final class VirtualDisplayLender: DisplayLending {
         }
     }
 
-    /// The saved resolution for this monitor, else the automatic one — or the native mode when
-    /// the window server does not offer the choice: a missing default must not end the session,
-    /// and the native mode is always there.
+    /// The saved display state for this monitor (its resolution), else the automatic one — or the
+    /// native mode when the window server does not offer the choice: a missing default must not
+    /// end the session, and the native mode is always there.
     private static func activateInitialResolution(
         on handle: any VirtualDisplayHandle, for monitor: MonitorDescription, choice: HiDPIChoice,
-        saved: DisplayResolution?
+        saved: SavedDisplayState?
     ) throws(VirtualDisplayError) -> DisplayResolution {
         let computed = initialResolution(for: monitor, choice: choice, configuration: handle.configuration)
         let native = handle.configuration.nativeResolution
-        let attempts = saved.map { [$0, computed].filter { $0 != native } } ?? [computed]
+        let attempts = saved.map { [$0.resolution, computed].filter { $0 != native } } ?? [computed]
         for resolution in attempts {
             do throws(VirtualDisplayError) {
                 try handle.activate(resolution)
                 return resolution
             } catch .resolutionUnavailable {
-                continue  // not offered (the offered modes changed): the next attempt still works
+                continue // not offered (the offered modes changed): the next attempt still works
             }
         }
         try handle.activate(native)

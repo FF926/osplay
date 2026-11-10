@@ -30,12 +30,13 @@ struct HostDisplayPolicy: Sendable {
     var quality: QualityPreset = .high
     /// The developer tools stream at the monitor's size; the app passes the user's setting.
     var streamSize: StreamSizePreset = .native
-    /// (fork) This viewer's monitors' last resolutions; the displays start there instead of the
-    /// automatic choice, so a mode the user picked in System Settings survives a reconnect.
-    var savedResolutions: [UInt8: DisplayResolution] = [:]
-    /// (fork) Runs when the session's displays go away, with their final resolutions, so the
-    /// next session for this viewer starts where this one ended.
-    var saveResolutions: @Sendable ([UInt8: DisplayResolution]) -> Void = { _ in }
+    /// (fork) This viewer's monitors' last display states; the displays start there instead of
+    /// the automatic choice, so a mode or position the user picked in System Settings survives a
+    /// reconnect and a swap.
+    var savedDisplays: [UInt8: SavedDisplayState] = [:]
+    /// (fork) Runs when the session's displays go away, with their final states, so the next
+    /// session for this viewer starts where this one ended.
+    var saveDisplays: @Sendable ([UInt8: SavedDisplayState]) -> Void = { _ in }
 }
 
 /// Why a host session ended other than by an orderly close.
@@ -215,7 +216,7 @@ actor HostSession {
         do {
             lent = try await displays.lend(
                 offered, peerID: policy.peerID, hiDPI: policy.hiDPI, arrangement: policy.arrangement,
-                saved: policy.savedResolutions)
+                saved: policy.savedDisplays)
         } catch {
             end(with: .display(error))
             return
@@ -291,18 +292,21 @@ actor HostSession {
         for pipeline in running {
             await pipeline.stop()
         }
-        // (fork) Remember the displays' final resolutions, so the next session for this viewer
-        // starts where this one ended: the user may have picked another mode in System Settings.
-        let final = lentDisplays.reduce(into: [UInt8: DisplayResolution]()) { result, display in
+        // (fork) Remember the displays' final states — resolution and origin — so the next
+        // session for this viewer starts where this one ended: the user may have picked another
+        // mode or moved the displays in System Settings.
+        let final = lentDisplays.reduce(into: [UInt8: SavedDisplayState]()) { result, display in
             if let mode = CGDisplayCopyDisplayMode(display.displayID) {
-                result[display.monitor.id] = DisplayResolution(
-                    points: DisplaySize(width: Int(mode.width), height: Int(mode.height)),
-                    pixels: DisplaySize(width: Int(mode.pixelWidth), height: Int(mode.pixelHeight)),
-                    refreshRate: mode.refreshRate)
+                result[display.monitor.id] = SavedDisplayState(
+                    resolution: DisplayResolution(
+                        points: DisplaySize(width: Int(mode.width), height: Int(mode.height)),
+                        pixels: DisplaySize(width: Int(mode.pixelWidth), height: Int(mode.pixelHeight)),
+                        refreshRate: mode.refreshRate),
+                    origin: CGDisplayBounds(display.displayID).origin)
             }
         }
         if !final.isEmpty {
-            activePolicy?.saveResolutions(final)
+            activePolicy?.saveDisplays(final)
         }
         lentDisplays = []
         activePolicy = nil

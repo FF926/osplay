@@ -57,13 +57,13 @@ jobs:
           xcodebuild -project Osplay.xcodeproj -scheme Osplay -destination 'platform=macOS' \
             -derivedDataPath DerivedData -configuration Release -quiet build
           cd DerivedData/Build/Products/Release
-          zip -qry Osplay-0.2.2-mac.zip Osplay.app
+          zip -qry Osplay-mac.zip Osplay.app
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         name: (fork) Upload the macOS app
         with:
-          name: Osplay-0.2.2-mac
-          path: macos/DerivedData/Build/Products/Release/Osplay-0.2.2-mac.zip
+          name: Osplay-mac
+          path: macos/DerivedData/Build/Products/Release/Osplay-mac.zip
           if-no-files-found: error
 
       - name: iPad app — build, test on a simulator
