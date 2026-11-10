@@ -41,10 +41,8 @@ VirtualDisplayHub::create_monitors(const void* owner,
     if (picked.size() < monitors.size()) {
         return Result::failure(DisplayError::NoMonitorLeft);
     }
-    std::uint8_t devices = 0;
     for (std::size_t i = 0; i < picked.size(); ++i) {
         slots_.at(picked[i]) = Slot{.owner = owner, .config = monitors[i]};
-        devices |= device_bit(picked[i]);
     }
     used_ = static_cast<std::size_t>(
         std::ranges::count_if(slots_, [](const Slot& slot) { return slot.owner != nullptr; }));
@@ -62,11 +60,17 @@ VirtualDisplayHub::create_monitors(const void* owner,
         forget(owner);
         return Result::failure(before.error());
     }
-    if (const auto enabled = send_expecting_ok(
-            {.command = helper::Command::Enable, .monitors = {}, .devices = devices});
-        !enabled) {
-        forget(owner);
-        return Result::failure(enabled.error());
+    // Devices are enabled ONE PER REQUEST (issue #30): devices enabled together start in one
+    // shared driver process until their next start, and the second monitor then offers only the
+    // first one's modes. One request per device gives each new device a fresh process of its own.
+    for (std::size_t i = 0; i < picked.size(); ++i) {
+        if (const auto enabled = send_expecting_ok({.command = helper::Command::Enable,
+                                                    .monitors = {},
+                                                    .devices = device_bit(picked[i])});
+            !enabled) {
+            forget(owner);
+            return Result::failure(enabled.error());
+        }
     }
     // Windows gives a new monitor its own default mode; the exact modes are set from the user
     // session.
