@@ -141,8 +141,9 @@ std::optional<PipelineError> DuplicationPipeline::Worker::initialize() {
     staging_desc.BindFlags = 0;
     staging_desc.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
     staging_desc.MiscFlags = 0;
-    const D3D11_SUBRESOURCE_DATA black_init{black_data.data(), settings.width,
-                                            static_cast<UINT>(black_bytes)};
+    const D3D11_SUBRESOURCE_DATA black_init{.pSysMem = black_data.data(),
+                                            .SysMemPitch = settings.width,
+                                            .SysMemSlicePitch = static_cast<UINT>(black_bytes)};
     ComPtr<ID3D11Texture2D> staging;
     if (FAILED(target.device->CreateTexture2D(&staging_desc, &black_init, &staging))) {
         return PipelineError::EncoderUnavailable;
