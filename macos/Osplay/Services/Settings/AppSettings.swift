@@ -34,6 +34,11 @@ final class AppSettings {
         didSet { defaults.set(showsStatsOverlay, forKey: Key.statsOverlay) }
     }
 
+    /// (fork) Shows the streamed screen in a movable window instead of full screen.
+    var viewerShowsInWindow: Bool {
+        didSet { defaults.set(viewerShowsInWindow, forKey: Key.viewerShowsInWindow) }
+    }
+
     /// Looks for a newer release once a day (on by default, like the Windows shell).
     var checksForUpdates: Bool {
         didSet { defaults.set(checksForUpdates, forKey: Key.checksForUpdates) }
@@ -76,6 +81,7 @@ final class AppSettings {
         swapHotkey = Self.load(Hotkey.self, from: defaults, forKey: Key.swapHotkey) ?? Tunables.Viewer.swapHotkey
         statsHotkey = Self.load(Hotkey.self, from: defaults, forKey: Key.statsHotkey) ?? Tunables.Viewer.statsHotkey
         showsStatsOverlay = defaults.bool(forKey: Key.statsOverlay)
+        viewerShowsInWindow = defaults.bool(forKey: Key.viewerShowsInWindow)
         checksForUpdates = defaults.object(forKey: Key.checksForUpdates) as? Bool ?? true
         lastUpdateCheck = defaults.object(forKey: Key.lastUpdateCheck) as? Date
         hasCompletedOnboarding = defaults.bool(forKey: Key.onboarding)
@@ -138,6 +144,7 @@ final class AppSettings {
         static let swapHotkey = "swapHotkey"
         static let statsHotkey = "statsHotkey"
         static let statsOverlay = "showsStatsOverlay"
+        static let viewerShowsInWindow = "viewerShowsInWindow"
         static let hiDPIChoices = "hiDPIChoices"
         static let savedDisplays = "savedDisplays"
         static let onboarding = "hasCompletedOnboarding"

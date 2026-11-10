@@ -230,7 +230,15 @@ final class ConnectionViewModel {
         let session = ViewerSession(
             core: core, decoders: dependencies.decoders, presenters: dependencies.presenters,
             power: dependencies.power,
-            target: { stream in places[stream.monitorID].map(PresentationTarget.fullScreen) },
+            // (fork) A viewer setting shows the stream in a movable window instead of a full-screen
+            // display, so the extended screen can sit on the desktop like a normal window.
+            target: { [settings = dependencies.settings, name = device.advertisement.name] stream in
+                if settings.viewerShowsInWindow {
+                    return .window(title: name)
+                }
+                return places[stream.monitorID].map(PresentationTarget.fullScreen)
+                    ?? .window(title: name)
+            },
             showsStats: { [settings = dependencies.settings] in await MainActor.run { settings.showsStatsOverlay } })
         viewer = session
         viewerPeer = peer

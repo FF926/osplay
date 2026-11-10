@@ -1,3418 +1,3452 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "app.name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay"
+  "sourceLanguage": "en",
+  "strings": {
+    "app.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay"
           }
         }
       }
     },
-    "connection.connect" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connect"
+    "connection.connect": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bağlan"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlan"
           }
         }
       }
     },
-    "connection.disconnect" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Disconnect"
+    "connection.disconnect": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disconnect"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bağlantıyı kes"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantıyı kes"
           }
         }
       }
     },
-    "connection.mode" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mode"
+    "connection.mode": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mode"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mod"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mod"
           }
         }
       }
     },
-    "connection.mode.off" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Off"
+    "connection.mode.off": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Off"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kapalı"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kapalı"
           }
         }
       }
     },
-    "connection.mode.sharing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Extend this Mac"
+    "connection.mode.sharing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Extend this Mac"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu Mac'i genişlet"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Mac'i genişlet"
           }
         }
       }
     },
-    "connection.mode.viewing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use as display"
+    "connection.mode.viewing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use as display"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran olarak kullan"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran olarak kullan"
           }
         }
       }
     },
-    "connection.remove" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove"
+    "connection.remove": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kaldır"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kaldır"
           }
         }
       }
     },
-    "connection.revoke" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revoke"
+    "connection.revoke": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revoke"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İptal et"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İptal et"
           }
         }
       }
     },
-    "connection.revoked" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revoked"
+    "connection.revoked": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revoked"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İptal edildi"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İptal edildi"
           }
         }
       }
     },
-    "connection.searching" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Looking for computers sharing their screens… If none appears, check that Osplay may use the local network (System Settings › Privacy & Security › Local Network). Without a router, join a PC's Osplay network in the Wi-Fi menu."
+    "connection.searching": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Looking for computers sharing their screens… If none appears, check that Osplay may use the local network (System Settings › Privacy & Security › Local Network). Without a router, join a PC's Osplay network in the Wi-Fi menu."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekranını paylaşan bilgisayarlar aranıyor… Hiçbiri görünmezse Osplay'in yerel ağı kullanma izni olduğunu kontrol edin (Sistem Ayarları › Gizlilik ve Güvenlik › Yerel Ağ). Router yoksa Wi-Fi menüsünden bir PC'nin Osplay ağına katılın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekranını paylaşan bilgisayarlar aranıyor… Hiçbiri görünmezse Osplay'in yerel ağı kullanma izni olduğunu kontrol edin (Sistem Ayarları › Gizlilik ve Güvenlik › Yerel Ağ). Router yoksa Wi-Fi menüsünden bir PC'nin Osplay ağına katılın."
           }
         }
       }
     },
-    "connection.status.connected %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connected to %@"
+    "connection.status.connected %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected to %@"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ cihazına bağlı"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cihazına bağlı"
           }
         }
       }
     },
-    "connection.status.connectedMany %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connected to %lld computers"
+    "connection.status.connectedMany %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connected to %lld computers"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld bilgisayara bağlı"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld bilgisayara bağlı"
           }
         }
       }
     },
-    "connection.status.connecting %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connecting to %@…"
+    "connection.status.connecting %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting to %@…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ cihazına bağlanılıyor…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cihazına bağlanılıyor…"
           }
         }
       }
     },
-    "connection.status.reconnecting %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Waiting for %@ to come back…"
+    "connection.status.reconnecting %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for %@ to come back…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ bilgisayarının geri gelmesi bekleniyor…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ bilgisayarının geri gelmesi bekleniyor…"
           }
         }
       }
     },
-    "connection.status.swapping %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swapping roles with %@…"
+    "connection.status.swapping %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swapping roles with %@…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ ile roller değiştiriliyor…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ile roller değiştiriliyor…"
           }
         }
       }
     },
-    "connection.status.waiting" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Waiting for a computer to connect…"
+    "connection.status.waiting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for a computer to connect…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bir bilgisayarın bağlanması bekleniyor…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir bilgisayarın bağlanması bekleniyor…"
           }
         }
       }
     },
-    "developer.createOne" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create 1"
+    "developer.createOne": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create 1"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1 oluştur"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1 oluştur"
           }
         }
       }
     },
-    "developer.createTwo" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Create 2"
+    "developer.createTwo": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Create 2"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "2 oluştur"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "2 oluştur"
           }
         }
       }
     },
-    "developer.crispDefault" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start at sharp 2× size"
+    "developer.crispDefault": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start at sharp 2× size"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Keskin 2× boyutla başlat"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Keskin 2× boyutla başlat"
           }
         }
       }
     },
-    "developer.displayName %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay Test %lld"
+    "developer.displayName %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay Test %lld"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay Test %lld"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay Test %lld"
           }
         }
       }
     },
-    "developer.hiDPI" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HiDPI"
+    "developer.hiDPI": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HiDPI"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "HiDPI"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "HiDPI"
           }
         }
       }
     },
-    "developer.hostTest.bitrate %@ %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ Mbit/s · latency %2$@ ms"
+    "developer.hostTest.bitrate %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ Mbit/s · latency %2$@ ms"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ Mbit/s · gecikme %2$@ ms"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ Mbit/s · gecikme %2$@ ms"
           }
         }
       }
     },
-    "developer.hostTest.captured %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Host captures %@ fps"
+    "developer.hostTest.captured %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Host captures %@ fps"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Host %@ fps yakalıyor"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Host %@ fps yakalıyor"
           }
         }
       }
     },
-    "developer.hostTest.dump" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save streams as .h264 (~/Movies/Osplay)"
+    "developer.hostTest.dump": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save streams as .h264 (~/Movies/Osplay)"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Akışları .h264 olarak kaydet (~/Movies/Osplay)"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akışları .h264 olarak kaydet (~/Movies/Osplay)"
           }
         }
       }
     },
-    "developer.hostTest.pacing %@ %@ %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Viewer receives %1$@ fps · p99 %2$@ ms · max %3$@ ms"
+    "developer.hostTest.pacing %@ %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viewer receives %1$@ fps · p99 %2$@ ms · max %3$@ ms"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Viewer %1$@ fps alıyor · p99 %2$@ ms · en çok %3$@ ms"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viewer %1$@ fps alıyor · p99 %2$@ ms · en çok %3$@ ms"
           }
         }
       }
     },
-    "developer.hostTest.revealDumps" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show files"
+    "developer.hostTest.revealDumps": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show files"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dosyaları göster"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dosyaları göster"
           }
         }
       }
     },
-    "developer.hostTest.start" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Start"
+    "developer.hostTest.start": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Start"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Başlat"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başlat"
           }
         }
       }
     },
-    "developer.hostTest.stop" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop"
+    "developer.hostTest.stop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Durdur"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durdur"
           }
         }
       }
     },
-    "developer.hostTest.stream %lld %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stream %1$lld · %2$@"
+    "developer.hostTest.stream %lld %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stream %1$lld · %2$@"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Akış %1$lld · %2$@"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akış %1$lld · %2$@"
           }
         }
       }
     },
-    "developer.hostTest.streams" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Streams"
+    "developer.hostTest.streams": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Streams"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Akışlar"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akışlar"
           }
         }
       }
     },
-    "developer.hostTest.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Host media test"
+    "developer.hostTest.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Host media test"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Host medya testi"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Host medya testi"
           }
         }
       }
     },
-    "developer.loopback.corrupt" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Corrupt a frame"
+    "developer.loopback.corrupt": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Corrupt a frame"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kare boz"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kare boz"
           }
         }
       }
     },
-    "developer.loopback.errors %lld %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Decode errors %1$lld · last recovery %2$@ ms"
+    "developer.loopback.errors %lld %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decode errors %1$lld · last recovery %2$@ ms"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çözme hatası %1$lld · son toparlanma %2$@ ms"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çözme hatası %1$lld · son toparlanma %2$@ ms"
           }
         }
       }
     },
-    "developer.loopback.freeze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Freeze frames after 5 seconds"
+    "developer.loopback.freeze": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Freeze frames after 5 seconds"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kareleri 5 saniye sonra dondur"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kareleri 5 saniye sonra dondur"
           }
         }
       }
     },
-    "developer.loopback.fullScreen" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Full screen on the built-in display"
+    "developer.loopback.fullScreen": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Full screen on the built-in display"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dahili ekranda tam ekran"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dahili ekranda tam ekran"
           }
         }
       }
     },
-    "developer.loopback.hotkeyHint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⌃⌥⌘V hides or shows the viewer."
+    "developer.loopback.hotkeyHint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⌃⌥⌘V hides or shows the viewer."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⌃⌥⌘V viewer'ı gizler veya gösterir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⌃⌥⌘V viewer'ı gizler veya gösterir."
           }
         }
       }
     },
-    "developer.loopback.presented %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Presented %@ fps"
+    "developer.loopback.presented %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Presented %@ fps"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gösterilen %@ fps"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gösterilen %@ fps"
           }
         }
       }
     },
-    "developer.loopback.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Viewer loopback"
+    "developer.loopback.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viewer loopback"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Viewer döngüsü"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Viewer döngüsü"
           }
         }
       }
     },
-    "developer.loopback.windowTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay Loopback"
+    "developer.loopback.windowTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay Loopback"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay Döngü"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay Döngü"
           }
         }
       }
     },
-    "developer.noDisplays" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No test displays"
+    "developer.noDisplays": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No test displays"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Test ekranı yok"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Test ekranı yok"
           }
         }
       }
     },
-    "developer.removeAll" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Remove all"
+    "developer.removeAll": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remove all"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tümünü kaldır"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tümünü kaldır"
           }
         }
       }
     },
-    "developer.resolution" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Resolution"
+    "developer.resolution": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolution"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çözünürlük"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çözünürlük"
           }
         }
       }
     },
-    "developer.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developer"
+    "developer.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Developer"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geliştirici"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geliştirici"
           }
         }
       }
     },
-    "developer.tools" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Developer tools"
+    "developer.tools": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Developer tools"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Geliştirici araçları"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geliştirici araçları"
           }
         }
       }
     },
-    "error.capture.displayNotFound" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A shared display disappeared. Connect again to recreate it."
+    "error.capture.displayNotFound": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A shared display disappeared. Connect again to recreate it."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paylaşılan bir ekran kayboldu. Yeniden oluşturmak için tekrar bağlanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paylaşılan bir ekran kayboldu. Yeniden oluşturmak için tekrar bağlanın."
           }
         }
       }
     },
-    "error.capture.failed %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Screen capture failed (error %lld). Connect again; if it keeps happening, restart the Mac."
+    "error.capture.failed %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen capture failed (error %lld). Connect again; if it keeps happening, restart the Mac."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran yakalama başarısız oldu (hata %lld). Tekrar bağlanın; sorun sürerse Mac'i yeniden başlatın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran yakalama başarısız oldu (hata %lld). Tekrar bağlanın; sorun sürerse Mac'i yeniden başlatın."
           }
         }
       }
     },
-    "error.capture.permissionRevoked" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Screen Recording permission was turned off, so sharing stopped. Turn it back on in System Settings → Privacy & Security → Screen Recording, then connect again."
+    "error.capture.permissionRevoked": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen Recording permission was turned off, so sharing stopped. Turn it back on in System Settings → Privacy & Security → Screen Recording, then connect again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran Kaydı izni kapatıldığı için paylaşım durdu. Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı bölümünden yeniden açın ve tekrar bağlanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran Kaydı izni kapatıldığı için paylaşım durdu. Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı bölümünden yeniden açın ve tekrar bağlanın."
           }
         }
       }
     },
-    "error.capture.stoppedBySystem" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS stopped screen sharing. Connect again to resume."
+    "error.capture.stoppedBySystem": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS stopped screen sharing. Connect again to resume."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS ekran paylaşımını durdurdu. Devam etmek için tekrar bağlanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS ekran paylaşımını durdurdu. Devam etmek için tekrar bağlanın."
           }
         }
       }
     },
-    "error.capture.stoppedByUser" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Screen sharing was stopped from the menu bar."
+    "error.capture.stoppedByUser": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen sharing was stopped from the menu bar."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran paylaşımı menü çubuğundan durduruldu."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran paylaşımı menü çubuğundan durduruldu."
           }
         }
       }
     },
-    "error.connection.incompatible" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer runs a different Osplay version. Update both to the latest version."
+    "error.connection.incompatible": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer runs a different Osplay version. Update both to the latest version."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar farklı bir Osplay sürümü çalıştırıyor. İkisini de son sürüme güncelleyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar farklı bir Osplay sürümü çalıştırıyor. İkisini de son sürüme güncelleyin."
           }
         }
       }
     },
-    "error.connection.noDisplay" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No display to offer."
+    "error.connection.noDisplay": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No display to offer."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sunulacak ekran yok."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunulacak ekran yok."
           }
         }
       }
     },
-    "error.connection.noDisplaySelected" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select at least one of your displays to offer."
+    "error.connection.noDisplaySelected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select at least one of your displays to offer."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sunmak için ekranlarınızdan en az birini seçin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunmak için ekranlarınızdan en az birini seçin."
           }
         }
       }
     },
-    "error.discovery.localNetwork" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay may not use the local network. Allow it in System Settings › Privacy & Security › Local Network."
+    "error.discovery.localNetwork": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay may not use the local network. Allow it in System Settings › Privacy & Security › Local Network."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay yerel ağı kullanamıyor. Sistem Ayarları › Gizlilik ve Güvenlik › Yerel Ağ bölümünden izin verin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay yerel ağı kullanamıyor. Sistem Ayarları › Gizlilik ve Güvenlik › Yerel Ağ bölümünden izin verin."
           }
         }
       }
     },
-    "error.discovery.name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This Mac's name cannot be announced on the network. Rename it in System Settings › General › Sharing."
+    "error.discovery.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This Mac's name cannot be announced on the network. Rename it in System Settings › General › Sharing."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu Mac'in adı ağda duyurulamıyor. Sistem Ayarları › Genel › Paylaşma'dan adını değiştirin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Mac'in adı ağda duyurulamıyor. Sistem Ayarları › Genel › Paylaşma'dan adını değiştirin."
           }
         }
       }
     },
-    "error.discovery.service %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bonjour is not available (error %lld). Check that Osplay may use the local network."
+    "error.discovery.service %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bonjour is not available (error %lld). Check that Osplay may use the local network."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bonjour kullanılamıyor (hata %lld). Osplay'in yerel ağı kullanma izni olduğunu kontrol edin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bonjour kullanılamıyor (hata %lld). Osplay'in yerel ağı kullanma izni olduğunu kontrol edin."
           }
         }
       }
     },
-    "error.encoder.failed %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video encoding stopped (error %lld). Connect again."
+    "error.encoder.failed %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video encoding stopped (error %lld). Connect again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video kodlama durdu (hata %lld). Tekrar bağlanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kodlama durdu (hata %lld). Tekrar bağlanın."
           }
         }
       }
     },
-    "error.encoder.unavailable %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The video encoder could not start (error %lld). Close apps that record or stream video and try again."
+    "error.encoder.unavailable %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The video encoder could not start (error %lld). Close apps that record or stream video and try again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Video kodlayıcı başlatılamadı (hata %lld). Video kaydeden veya yayınlayan uygulamaları kapatıp tekrar deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Video kodlayıcı başlatılamadı (hata %lld). Video kaydeden veya yayınlayan uygulamaları kapatıp tekrar deneyin."
           }
         }
       }
     },
-    "error.host.screenRecordingMissing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay needs Screen Recording permission to share your displays. Turn it on in System Settings → Privacy & Security → Screen Recording."
+    "error.host.screenRecordingMissing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay needs Screen Recording permission to share your displays. Turn it on in System Settings → Privacy & Security → Screen Recording."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekranlarınızı paylaşmak için Osplay'in Ekran Kaydı iznine ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı bölümünden açın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekranlarınızı paylaşmak için Osplay'in Ekran Kaydı iznine ihtiyacı var. Sistem Ayarları → Gizlilik ve Güvenlik → Ekran Kaydı bölümünden açın."
           }
         }
       }
     },
-    "error.host.session %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The connection to the other device failed (error %lld). Try connecting again."
+    "error.host.session %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The connection to the other device failed (error %lld). Try connecting again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer cihazla bağlantı kesildi (hata %lld). Yeniden bağlanmayı deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer cihazla bağlantı kesildi (hata %lld). Yeniden bağlanmayı deneyin."
           }
         }
       }
     },
-    "error.hotkey.unavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The ⌃⌥⌘V shortcut is used by another app, so it cannot hide the viewer."
+    "error.hotkey.unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The ⌃⌥⌘V shortcut is used by another app, so it cannot hide the viewer."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⌃⌥⌘V kısayolu başka bir uygulama tarafından kullanılıyor; viewer'ı gizleyemez."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⌃⌥⌘V kısayolu başka bir uygulama tarafından kullanılıyor; viewer'ı gizleyemez."
           }
         }
       }
     },
-    "error.keyStore.damaged" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay's stored keys are damaged. Remove the \"Osplay\" items in Keychain Access and pair again."
+    "error.keyStore.damaged": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay's stored keys are damaged. Remove the \"Osplay\" items in Keychain Access and pair again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay'in saklı anahtarları bozuk. Anahtar Zinciri Erişimi'nde \"Osplay\" öğelerini silip yeniden eşleştirin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay'in saklı anahtarları bozuk. Anahtar Zinciri Erişimi'nde \"Osplay\" öğelerini silip yeniden eşleştirin."
           }
         }
       }
     },
-    "error.keyStore.identity" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay could not create its device key."
+    "error.keyStore.identity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay could not create its device key."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay cihaz anahtarını oluşturamadı."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay cihaz anahtarını oluşturamadı."
           }
         }
       }
     },
-    "error.keyStore.keychain %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The Keychain refused to store Osplay's key (error %lld)."
+    "error.keyStore.keychain %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The Keychain refused to store Osplay's key (error %lld)."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Anahtar Zinciri Osplay anahtarını saklamayı reddetti (hata %lld)."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anahtar Zinciri Osplay anahtarını saklamayı reddetti (hata %lld)."
           }
         }
       }
     },
-    "error.session.busy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay is still closing the previous session. Try again in a moment."
+    "error.session.busy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay is still closing the previous session. Try again in a moment."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay önceki oturumu hâlâ kapatıyor. Biraz sonra tekrar deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay önceki oturumu hâlâ kapatıyor. Biraz sonra tekrar deneyin."
           }
         }
       }
     },
-    "error.session.encryption" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The connection's encryption check failed, so it was closed. Connect again; if it keeps happening, check the network."
+    "error.session.encryption": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The connection's encryption check failed, so it was closed. Connect again; if it keeps happening, check the network."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bağlantının şifreleme denetimi başarısız oldu ve bağlantı kapatıldı. Yeniden bağlanın; tekrarlarsa ağı kontrol edin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlantının şifreleme denetimi başarısız oldu ve bağlantı kapatıldı. Yeniden bağlanın; tekrarlarsa ağı kontrol edin."
           }
         }
       }
     },
-    "error.session.internal %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Something went wrong inside Osplay (code %lld). Export the logs in Settings › Advanced and report the problem."
+    "error.session.internal %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something went wrong inside Osplay (code %lld). Export the logs in Settings › Advanced and report the problem."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay'in içinde bir sorun oluştu (kod %lld). Ayarlar › Gelişmiş'ten kayıtları dışa aktarıp sorunu bildirin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay'in içinde bir sorun oluştu (kod %lld). Ayarlar › Gelişmiş'ten kayıtları dışa aktarıp sorunu bildirin."
           }
         }
       }
     },
-    "error.session.notTrusted" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer refused this Mac. It may have been removed from its paired devices."
+    "error.session.notTrusted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer refused this Mac. It may have been removed from its paired devices."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar bu Mac'i reddetti. Eşleşmiş cihazlarından kaldırılmış olabilir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar bu Mac'i reddetti. Eşleşmiş cihazlarından kaldırılmış olabilir."
           }
         }
       }
     },
-    "error.session.pairingRejected" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pairing was rejected."
+    "error.session.pairingRejected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pairing was rejected."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eşleştirme reddedildi."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşleştirme reddedildi."
           }
         }
       }
     },
-    "error.session.peerBusy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer already uses all the displays it can extend onto."
+    "error.session.peerBusy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer already uses all the displays it can extend onto."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar genişleyebileceği bütün ekranları zaten kullanıyor."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar genişleyebileceği bütün ekranları zaten kullanıyor."
           }
         }
       }
     },
-    "error.session.peerError" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer ended the session because of an error there. Check Osplay on that computer."
+    "error.session.peerError": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer ended the session because of an error there. Check Osplay on that computer."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar kendi tarafındaki bir hata yüzünden oturumu sonlandırdı. O bilgisayardaki Osplay'i kontrol edin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar kendi tarafındaki bir hata yüzünden oturumu sonlandırdı. O bilgisayardaki Osplay'i kontrol edin."
           }
         }
       }
     },
-    "error.session.peerSleeping" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer went to sleep."
+    "error.session.peerSleeping": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer went to sleep."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar uyku moduna geçti."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar uyku moduna geçti."
           }
         }
       }
     },
-    "error.session.protocol" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer sent data Osplay does not understand. Update Osplay on both computers."
+    "error.session.protocol": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer sent data Osplay does not understand. Update Osplay on both computers."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar Osplay'in anlamadığı veriler gönderdi. İki bilgisayarda da Osplay'i güncelleyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar Osplay'in anlamadığı veriler gönderdi. İki bilgisayarda da Osplay'i güncelleyin."
           }
         }
       }
     },
-    "error.session.random" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS could not provide secure random numbers. Restart the Mac and try again."
+    "error.session.random": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS could not provide secure random numbers. Restart the Mac and try again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS güvenli rastgele sayı üretemedi. Mac'i yeniden başlatıp tekrar deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS güvenli rastgele sayı üretemedi. Mac'i yeniden başlatıp tekrar deneyin."
           }
         }
       }
     },
-    "error.session.unreachable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The connection to the other computer was lost."
+    "error.session.unreachable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The connection to the other computer was lost."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayarla bağlantı kesildi."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayarla bağlantı kesildi."
           }
         }
       }
     },
-    "error.swap.busy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer cannot swap roles right now. Try again in a moment."
+    "error.swap.busy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer cannot swap roles right now. Try again in a moment."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar şu an rolleri değiştiremiyor. Birazdan yeniden deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar şu an rolleri değiştiremiyor. Birazdan yeniden deneyin."
           }
         }
       }
     },
-    "error.swap.cannotHost" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer cannot extend itself right now: a permission, the virtual display driver or the helper service is missing there."
+    "error.swap.cannotHost": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer cannot extend itself right now: a permission, the virtual display driver or the helper service is missing there."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar şu an kendini genişletemiyor: orada bir izin, sanal ekran sürücüsü ya da yardımcı hizmet eksik."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar şu an kendini genişletemiyor: orada bir izin, sanal ekran sürücüsü ya da yardımcı hizmet eksik."
           }
         }
       }
     },
-    "error.swap.noAnswer" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer did not answer the role swap."
+    "error.swap.noAnswer": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer did not answer the role swap."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayar rol değiştirme isteğine yanıt vermedi."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayar rol değiştirme isteğine yanıt vermedi."
           }
         }
       }
     },
-    "error.swap.notFound" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "After the swap the other computer did not appear. Choose it under Nearby computers once it does."
+    "error.swap.notFound": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "After the swap the other computer did not appear. Choose it under Nearby computers once it does."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Değişimden sonra diğer bilgisayar görünmedi. Göründüğünde Yakındaki bilgisayarlar altından seçin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Değişimden sonra diğer bilgisayar görünmedi. Göründüğünde Yakındaki bilgisayarlar altından seçin."
           }
         }
       }
     },
-    "error.swap.unsupported" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The other computer runs an older Osplay without role swap. Update both."
+    "error.swap.unsupported": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The other computer runs an older Osplay without role swap. Update both."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayarda rol değiştirmeyi bilmeyen eski bir Osplay var. İkisini de güncelleyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayarda rol değiştirmeyi bilmeyen eski bir Osplay var. İkisini de güncelleyin."
           }
         }
       }
     },
-    "error.virtualDisplay.creationFailed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS did not create the virtual display. Quit Osplay, open it again and retry."
+    "error.virtualDisplay.creationFailed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS did not create the virtual display. Quit Osplay, open it again and retry."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS sanal ekranı oluşturmadı. Osplay'den çıkıp yeniden açın ve tekrar deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS sanal ekranı oluşturmadı. Osplay'den çıkıp yeniden açın ve tekrar deneyin."
           }
         }
       }
     },
-    "error.virtualDisplay.displayDestroyed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The display has already been removed."
+    "error.virtualDisplay.displayDestroyed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The display has already been removed."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran zaten kaldırılmış."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran zaten kaldırılmış."
           }
         }
       }
     },
-    "error.virtualDisplay.duplicateIdentity" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "A display for this monitor already exists."
+    "error.virtualDisplay.duplicateIdentity": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A display for this monitor already exists."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu monitör için zaten bir ekran var."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu monitör için zaten bir ekran var."
           }
         }
       }
     },
-    "error.virtualDisplay.invalidConfiguration" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "These display settings are not supported."
+    "error.virtualDisplay.invalidConfiguration": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "These display settings are not supported."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu ekran ayarları desteklenmiyor."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu ekran ayarları desteklenmiyor."
           }
         }
       }
     },
-    "error.virtualDisplay.notReady" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS has not finished setting up the display yet. Wait a moment and try again."
+    "error.virtualDisplay.notReady": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS has not finished setting up the display yet. Wait a moment and try again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS ekranı henüz hazırlamayı bitirmedi. Biraz bekleyip tekrar deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS ekranı henüz hazırlamayı bitirmedi. Biraz bekleyip tekrar deneyin."
           }
         }
       }
     },
-    "error.virtualDisplay.reconfigurationFailed %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS could not change the resolution (error %lld). Try again from System Settings → Displays."
+    "error.virtualDisplay.reconfigurationFailed %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS could not change the resolution (error %lld). Try again from System Settings → Displays."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS çözünürlüğü değiştiremedi (hata %lld). Sistem Ayarları → Ekranlar üzerinden tekrar deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS çözünürlüğü değiştiremedi (hata %lld). Sistem Ayarları → Ekranlar üzerinden tekrar deneyin."
           }
         }
       }
     },
-    "error.virtualDisplay.resolutionUnavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This resolution is not available for the display."
+    "error.virtualDisplay.resolutionUnavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This resolution is not available for the display."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu çözünürlük bu ekranda kullanılamıyor."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu çözünürlük bu ekranda kullanılamıyor."
           }
         }
       }
     },
-    "error.virtualDisplay.settingsRejected" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS rejected the display's resolutions. Try a different resolution."
+    "error.virtualDisplay.settingsRejected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS rejected the display's resolutions. Try a different resolution."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS ekranın çözünürlüklerini kabul etmedi. Farklı bir çözünürlük deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS ekranın çözünürlüklerini kabul etmedi. Farklı bir çözünürlük deneyin."
           }
         }
       }
     },
-    "error.virtualDisplay.tooManyDisplays %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay can add at most %lld displays."
+    "error.virtualDisplay.tooManyDisplays %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay can add at most %lld displays."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay en fazla %lld ekran ekleyebilir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay en fazla %lld ekran ekleyebilir."
           }
         }
       }
     },
-    "host.displayName %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay Display %lld"
+    "host.displayName %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay Display %lld"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay Ekranı %lld"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay Ekranı %lld"
           }
         }
       }
     },
-    "menu.coreVersion %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Core %@"
+    "menu.coreVersion %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core %@"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çekirdek %@"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çekirdek %@"
           }
         }
       }
     },
-    "menu.device.new" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pairs on first connection"
+    "menu.device.new": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pairs on first connection"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İlk bağlantıda eşleşir"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İlk bağlantıda eşleşir"
           }
         }
       }
     },
-    "menu.device.paired" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paired"
+    "menu.device.paired": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paired"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eşleşmiş"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşleşmiş"
           }
         }
       }
     },
-    "menu.displays" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your displays"
+    "menu.displays": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your displays"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekranlarınız"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekranlarınız"
           }
         }
       }
     },
-    "menu.displays.fallback %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Display %lld"
+    "menu.displays.fallback %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Display %lld"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran %lld"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran %lld"
           }
         }
       }
     },
-    "menu.displays.hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Selected displays are offered to the other computer. Click one to leave it out."
+    "menu.displays.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Selected displays are offered to the other computer. Click one to leave it out."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Seçili ekranlar diğer bilgisayara sunulur. Dışarıda bırakmak için birine tıklayın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Seçili ekranlar diğer bilgisayara sunulur. Dışarıda bırakmak için birine tıklayın."
           }
         }
       }
     },
-    "menu.displays.leftOut" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Left out"
+    "menu.displays.leftOut": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Left out"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dışarıda"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dışarıda"
           }
         }
       }
     },
-    "menu.displays.offered" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Offered"
+    "menu.displays.offered": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Offered"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sunuluyor"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sunuluyor"
           }
         }
       }
     },
-    "menu.displays.size %lld %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld × %2$lld"
+    "menu.displays.size %lld %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld × %2$lld"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld × %2$lld"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld × %2$lld"
           }
         }
       }
     },
-    "menu.hotkeyHint %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ hides and shows the displays."
+    "menu.hotkeyHint %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hides and shows the displays."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ ekranları gizler ve gösterir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ekranları gizler ve gösterir."
           }
         }
       }
     },
-    "menu.nearby" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Nearby computers"
+    "menu.nearby": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nearby computers"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yakındaki bilgisayarlar"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yakındaki bilgisayarlar"
           }
         }
       }
     },
-    "menu.permissionsMissing" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay is missing a permission. Click to fix."
+    "menu.permissionsMissing": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay is missing a permission. Click to fix."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay'in bir izni eksik. Düzeltmek için tıklayın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay'in bir izni eksik. Düzeltmek için tıklayın."
           }
         }
       }
     },
-    "menu.quality" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quality"
+    "menu.quality": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quality"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kalite"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kalite"
           }
         }
       }
     },
-    "menu.quality.hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Applies to the next connection. A smaller stream size and lower quality need less from the computer and the network; the displays keep their resolution."
+    "menu.quality.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Applies to the next connection. A smaller stream size and lower quality need less from the computer and the network; the displays keep their resolution."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bir sonraki bağlantıda geçerli olur. Daha küçük yayın boyutu ve düşük kalite, bilgisayardan ve ağdan daha az ister; ekranlar çözünürlüklerini korur."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir sonraki bağlantıda geçerli olur. Daha küçük yayın boyutu ve düşük kalite, bilgisayardan ve ağdan daha az ister; ekranlar çözünürlüklerini korur."
           }
         }
       }
     },
-    "menu.quit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Quit Osplay"
+    "menu.quit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quit Osplay"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay'den Çık"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay'den Çık"
           }
         }
       }
     },
-    "menu.role.hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Turns this on."
+    "menu.role.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turns this on."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bunu açar."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunu açar."
           }
         }
       }
     },
-    "menu.role.hint.selected" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "On. Select again to turn off."
+    "menu.role.hint.selected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "On. Select again to turn off."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Açık. Kapatmak için tekrar seçin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Açık. Kapatmak için tekrar seçin."
           }
         }
       }
     },
-    "menu.role.sharing.detail" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use another computer's monitors as extra displays for this Mac."
+    "menu.role.sharing.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use another computer's monitors as extra displays for this Mac."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Başka bir bilgisayarın monitörlerini bu Mac'e ek ekran olarak kullanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başka bir bilgisayarın monitörlerini bu Mac'e ek ekran olarak kullanın."
           }
         }
       }
     },
-    "menu.role.viewing.detail" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show another computer's extra displays on this Mac's displays."
+    "menu.role.viewing.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show another computer's extra displays on this Mac's displays."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Başka bir bilgisayarın ek ekranlarını bu Mac'in ekranlarında gösterin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başka bir bilgisayarın ek ekranlarını bu Mac'in ekranlarında gösterin."
           }
         }
       }
     },
-    "menu.settings" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings…"
+    "menu.settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ayarlar…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarlar…"
           }
         }
       }
     },
-    "menu.sharing.connecting" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connecting…"
+    "menu.sharing.connecting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connecting…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bağlanıyor…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlanıyor…"
           }
         }
       }
     },
-    "menu.sharing.displays %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "variations" : {
-            "plural" : {
-              "one" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld display"
+    "menu.sharing.displays %lld": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "variations": {
+            "plural": {
+              "one": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld display"
                 }
               },
-              "other" : {
-                "stringUnit" : {
-                  "state" : "translated",
-                  "value" : "%lld displays"
+              "other": {
+                "stringUnit": {
+                  "state": "translated",
+                  "value": "%lld displays"
                 }
               }
             }
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld ekran"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ekran"
           }
         }
       }
     },
-    "menu.sharing.full" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All four displays are in use"
+    "menu.sharing.full": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "All four displays are in use"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dört ekranın hepsi kullanımda"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dört ekranın hepsi kullanımda"
           }
         }
       }
     },
-    "menu.sharing.waiting" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Waiting for a computer to connect"
+    "menu.sharing.waiting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for a computer to connect"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bir bilgisayarın bağlanması bekleniyor"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir bilgisayarın bağlanması bekleniyor"
           }
         }
       }
     },
-    "menu.sharing.waitingNext" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Waiting for another computer"
+    "menu.sharing.waitingNext": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Waiting for another computer"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Başka bir bilgisayar bekleniyor"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Başka bir bilgisayar bekleniyor"
           }
         }
       }
     },
-    "menu.status.idle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not sharing or viewing"
+    "menu.status.idle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not sharing or viewing"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Paylaşılmıyor, görüntülenmiyor"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paylaşılmıyor, görüntülenmiyor"
           }
         }
       }
     },
-    "menu.streamSize" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stream size"
+    "menu.streamSize": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stream size"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yayın boyutu"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yayın boyutu"
           }
         }
       }
     },
-    "menu.swap" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swap roles"
+    "menu.swap": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swap roles"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rolleri değiştir"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rolleri değiştir"
           }
         }
       }
     },
-    "menu.swap.hint %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ swaps the roles: the display becomes the computer that extends."
+    "menu.swap.hint %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ swaps the roles: the display becomes the computer that extends."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ rolleri değiştirir: ekran olan bilgisayar genişleten olur."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ rolleri değiştirir: ekran olan bilgisayar genişleten olur."
           }
         }
       }
     },
-    "menu.swap.hotkeyTaken %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ is used by another app; use the button to swap roles."
+    "menu.swap.hotkeyTaken %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is used by another app; use the button to swap roles."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ başka bir uygulama tarafından kullanılıyor; rolleri değiştirmek için düğmeyi kullanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ başka bir uygulama tarafından kullanılıyor; rolleri değiştirmek için düğmeyi kullanın."
           }
         }
       }
     },
-    "onboarding.allow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allow…"
+    "onboarding.allow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İzin ver…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin ver…"
           }
         }
       }
     },
-    "onboarding.done" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Done"
+    "onboarding.done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bitti"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bitti"
           }
         }
       }
     },
-    "onboarding.granted" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allowed"
+    "onboarding.granted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allowed"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İzin verildi"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzin verildi"
           }
         }
       }
     },
-    "onboarding.later" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Later"
+    "onboarding.later": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Later"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sonra"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sonra"
           }
         }
       }
     },
-    "onboarding.localNetwork" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Local Network"
+    "onboarding.localNetwork": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Local Network"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yerel Ağ"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yerel Ağ"
           }
         }
       }
     },
-    "onboarding.localNetwork.detail" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "To find your other computers and connect to them."
+    "onboarding.localNetwork.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To find your other computers and connect to them."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diğer bilgisayarlarınızı bulmak ve onlara bağlanmak için."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diğer bilgisayarlarınızı bulmak ve onlara bağlanmak için."
           }
         }
       }
     },
-    "onboarding.openSettings" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Settings"
+    "onboarding.openSettings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ayarları Aç"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ayarları Aç"
           }
         }
       }
     },
-    "onboarding.screenRecording" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Screen Recording"
+    "onboarding.screenRecording": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Screen Recording"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran Kaydı"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran Kaydı"
           }
         }
       }
     },
-    "onboarding.screenRecording.detail" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "To send this Mac's virtual displays to another computer."
+    "onboarding.screenRecording.detail": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "To send this Mac's virtual displays to another computer."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu Mac'in sanal ekranlarını başka bir bilgisayara göndermek için."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Mac'in sanal ekranlarını başka bir bilgisayara göndermek için."
           }
         }
       }
     },
-    "onboarding.subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Grant them once; you can change them later in System Settings."
+    "onboarding.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grant them once; you can change them later in System Settings."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bir kez verin; daha sonra Sistem Ayarları'ndan değiştirebilirsiniz."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir kez verin; daha sonra Sistem Ayarları'ndan değiştirebilirsiniz."
           }
         }
       }
     },
-    "onboarding.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay needs two permissions"
+    "onboarding.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay needs two permissions"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay'in iki izne ihtiyacı var"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay'in iki izne ihtiyacı var"
           }
         }
       }
     },
-    "onboarding.windowTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Welcome to Osplay"
+    "onboarding.windowTitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Welcome to Osplay"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay'e hoş geldiniz"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay'e hoş geldiniz"
           }
         }
       }
     },
-    "pairing.accept" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Accept"
+    "pairing.accept": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accept"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kabul et"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kabul et"
           }
         }
       }
     },
-    "pairing.hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Accept on both computers to pair. You only do this once."
+    "pairing.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accept on both computers to pair. You only do this once."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Eşleştirmek için iki bilgisayarda da kabul edin. Bunu yalnızca bir kez yaparsınız."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eşleştirmek için iki bilgisayarda da kabul edin. Bunu yalnızca bir kez yaparsınız."
           }
         }
       }
     },
-    "pairing.message %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ wants to connect. Check that it shows the same code:"
+    "pairing.message %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ wants to connect. Check that it shows the same code:"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ bağlanmak istiyor. Aynı kodu gösterdiğini kontrol edin:"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ bağlanmak istiyor. Aynı kodu gösterdiğini kontrol edin:"
           }
         }
       }
     },
-    "pairing.reject" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reject"
+    "pairing.reject": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reject"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Reddet"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reddet"
           }
         }
       }
     },
-    "pairing.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Pair with Osplay"
+    "pairing.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pair with Osplay"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay ile eşleştir"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay ile eşleştir"
           }
         }
       }
     },
-    "permission.localNetwork.open" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Local Network Settings"
+    "permission.localNetwork.open": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Local Network Settings"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yerel Ağ Ayarlarını Aç"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yerel Ağ Ayarlarını Aç"
           }
         }
       }
     },
-    "permission.screenRecording.open" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Screen Recording Settings"
+    "permission.screenRecording.open": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Screen Recording Settings"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekran Kaydı Ayarlarını Aç"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekran Kaydı Ayarlarını Aç"
           }
         }
       }
     },
-    "quality.balanced" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Balanced"
+    "quality.balanced": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balanced"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dengeli"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dengeli"
           }
         }
       }
     },
-    "quality.high" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "High"
+    "quality.high": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "High"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yüksek"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüksek"
           }
         }
       }
     },
-    "quality.ultra" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ultra"
+    "quality.ultra": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultra"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ultra"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultra"
           }
         }
       }
     },
-    "resolution.hiDPI %@ %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ (HiDPI, %2$@ px)"
+    "resolution.hiDPI %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ (HiDPI, %2$@ px)"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ (HiDPI, %2$@ piksel)"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ (HiDPI, %2$@ piksel)"
           }
         }
       }
     },
-    "settings.advanced" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Advanced"
+    "settings.advanced": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Advanced"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Gelişmiş"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gelişmiş"
           }
         }
       }
     },
-    "settings.arrange.empty" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Connect once to arrange this computer's monitors here."
+    "settings.arrange.empty": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connect once to arrange this computer's monitors here."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu bilgisayarın monitörlerini burada düzenlemek için bir kez bağlanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu bilgisayarın monitörlerini burada düzenlemek için bir kez bağlanın."
           }
         }
       }
     },
-    "settings.arrange.hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drag to move this display next to another one."
+    "settings.arrange.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag to move this display next to another one."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu ekranı başka bir ekranın yanına taşımak için sürükleyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu ekranı başka bir ekranın yanına taşımak için sürükleyin."
           }
         }
       }
     },
-    "settings.arrange.thisMac" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This Mac"
+    "settings.arrange.thisMac": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This Mac"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu Mac"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Mac"
           }
         }
       }
     },
-    "settings.devices" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Devices"
+    "settings.devices": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Devices"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cihazlar"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cihazlar"
           }
         }
       }
     },
-    "settings.devices.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Revoke refuses a device from now on, also mid-session. Remove forgets it; it pairs again on its next connection."
+    "settings.devices.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Revoke refuses a device from now on, also mid-session. Remove forgets it; it pairs again on its next connection."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İptal et, cihazı bundan sonra reddeder; açık bir oturum varsa onu da keser. Kaldır, cihazı unutur; bir sonraki bağlantısında yeniden eşleşir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İptal et, cihazı bundan sonra reddeder; açık bir oturum varsa onu da keser. Kaldır, cihazı unutur; bir sonraki bağlantısında yeniden eşleşir."
           }
         }
       }
     },
-    "settings.devices.name" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Name"
+    "settings.devices.name": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ad"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ad"
           }
         }
       }
     },
-    "settings.diagnostics" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Diagnostics"
+    "settings.diagnostics": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diagnostics"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teşhis"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teşhis"
           }
         }
       }
     },
-    "settings.diagnostics.copied" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copied. Paste it into your bug report."
+    "settings.diagnostics.copied": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copied. Paste it into your bug report."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kopyalandı. Hata bildiriminize yapıştırın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kopyalandı. Hata bildiriminize yapıştırın."
           }
         }
       }
     },
-    "settings.diagnostics.copy" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copy Diagnostics"
+    "settings.diagnostics.copy": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copy Diagnostics"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Teşhis Bilgisini Kopyala"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Teşhis Bilgisini Kopyala"
           }
         }
       }
     },
-    "settings.diagnostics.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Copies versions, settings and the recent log for a bug report. Device names and network addresses are replaced."
+    "settings.diagnostics.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copies versions, settings and the recent log for a bug report. Device names and network addresses are replaced."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hata bildirimi için sürümleri, ayarları ve son kayıtları kopyalar. Cihaz adları ve ağ adresleri gizlenir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hata bildirimi için sürümleri, ayarları ve son kayıtları kopyalar. Cihaz adları ve ağ adresleri gizlenir."
           }
         }
       }
     },
-    "settings.displays" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Displays"
+    "settings.displays": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Displays"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekranlar"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekranlar"
           }
         }
       }
     },
-    "settings.general" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "General"
+    "settings.general": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Genel"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genel"
           }
         }
       }
     },
-    "settings.hiDPI" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Resolution"
+    "settings.hiDPI": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resolution"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Çözünürlük"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çözünürlük"
           }
         }
       }
     },
-    "settings.hiDPI.always" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sharper text (HiDPI)"
+    "settings.hiDPI.always": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sharper text (HiDPI)"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Daha keskin yazı (HiDPI)"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha keskin yazı (HiDPI)"
           }
         }
       }
     },
-    "settings.hiDPI.automatic" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Automatic"
+    "settings.hiDPI.automatic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatic"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Otomatik"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otomatik"
           }
         }
       }
     },
-    "settings.hiDPI.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Drag each monitor to where it stands on your desk; while connected the displays move at once, otherwise the next connection uses the new layout. Automatic resolution follows that monitor's own scaling."
+    "settings.hiDPI.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Drag each monitor to where it stands on your desk; while connected the displays move at once, otherwise the next connection uses the new layout. Automatic resolution follows that monitor's own scaling."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Her monitörü masanızda durduğu yere sürükleyin; bağlıyken ekranlar hemen taşınır, değilse bir sonraki bağlantı yeni düzeni kullanır. Otomatik çözünürlük, o monitörün kendi ölçeğini izler."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Her monitörü masanızda durduğu yere sürükleyin; bağlıyken ekranlar hemen taşınır, değilse bir sonraki bağlantı yeni düzeni kullanır. Otomatik çözünürlük, o monitörün kendi ölçeğini izler."
           }
         }
       }
     },
-    "settings.hiDPI.never" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "More space"
+    "settings.hiDPI.never": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "More space"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Daha fazla alan"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha fazla alan"
           }
         }
       }
     },
-    "settings.hotkey" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Hide and show the display"
+    "settings.hotkey": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hide and show the display"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ekranı gizle ve göster"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ekranı gizle ve göster"
           }
         }
       }
     },
-    "settings.hotkey.accessibility %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shortcut: %@"
+    "settings.hotkey.accessibility %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shortcut: %@"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kısayol: %@"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kısayol: %@"
           }
         }
       }
     },
-    "settings.hotkey.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Works in any app while this Mac is used as a display. A new shortcut applies from the next connection."
+    "settings.hotkey.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works in any app while this Mac is used as a display. A new shortcut applies from the next connection."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bu Mac ekran olarak kullanılırken her uygulamada çalışır. Yeni kısayol bir sonraki bağlantıdan itibaren geçerli olur."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bu Mac ekran olarak kullanılırken her uygulamada çalışır. Yeni kısayol bir sonraki bağlantıdan itibaren geçerli olur."
           }
         }
       }
     },
-    "settings.hotkey.duplicate %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ is already Osplay's other shortcut."
+    "settings.hotkey.duplicate %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is already Osplay's other shortcut."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ zaten Osplay'in diğer kısayolu."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ zaten Osplay'in diğer kısayolu."
           }
         }
       }
     },
-    "settings.hotkey.hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Click, then press the new combination. Escape cancels."
+    "settings.hotkey.hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Click, then press the new combination. Escape cancels."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tıklayın, ardından yeni kombinasyona basın. Escape iptal eder."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tıklayın, ardından yeni kombinasyona basın. Escape iptal eder."
           }
         }
       }
     },
-    "settings.hotkey.needsModifier" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Use ⌃, ⌥ or ⌘ with a key."
+    "settings.hotkey.needsModifier": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Use ⌃, ⌥ or ⌘ with a key."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bir tuşla birlikte ⌃, ⌥ veya ⌘ kullanın."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir tuşla birlikte ⌃, ⌥ veya ⌘ kullanın."
           }
         }
       }
     },
-    "settings.hotkey.recording" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Press the new shortcut…"
+    "settings.hotkey.recording": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Press the new shortcut…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yeni kısayola basın…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yeni kısayola basın…"
           }
         }
       }
     },
-    "settings.hotkey.reset" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Restore default"
+    "settings.hotkey.reset": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restore default"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Varsayılana dön"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varsayılana dön"
           }
         }
       }
     },
-    "settings.hotkey.taken %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ is already used by another app."
+    "settings.hotkey.taken %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ is already used by another app."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ başka bir uygulama tarafından kullanılıyor."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ başka bir uygulama tarafından kullanılıyor."
           }
         }
       }
     },
-    "settings.launchAtLogin" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Osplay at login"
+    "settings.launchAtLogin": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Osplay at login"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Oturum açılınca Osplay'i başlat"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oturum açılınca Osplay'i başlat"
           }
         }
       }
     },
-    "settings.launchAtLogin.approval" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allow Osplay in System Settings › General › Login Items."
+    "settings.launchAtLogin.approval": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow Osplay in System Settings › General › Login Items."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sistem Ayarları › Genel › Giriş Öğeleri'nde Osplay'e izin verin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sistem Ayarları › Genel › Giriş Öğeleri'nde Osplay'e izin verin."
           }
         }
       }
     },
-    "settings.launchAtLogin.failed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS did not allow opening at login. Move Osplay to the Applications folder and try again."
+    "settings.launchAtLogin.failed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS did not allow opening at login. Move Osplay to the Applications folder and try again."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "macOS oturum açılışında başlatmaya izin vermedi. Osplay'i Uygulamalar klasörüne taşıyıp yeniden deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS oturum açılışında başlatmaya izin vermedi. Osplay'i Uygulamalar klasörüne taşıyıp yeniden deneyin."
           }
         }
       }
     },
-    "settings.logs" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Logs"
+    "settings.logs": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Logs"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kayıtlar"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kayıtlar"
           }
         }
       }
     },
-    "settings.logs.export" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Export…"
+    "settings.logs.export": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Export…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Dışa aktar…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dışa aktar…"
           }
         }
       }
     },
-    "settings.logs.failed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "The logs could not be exported."
+    "settings.logs.failed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The logs could not be exported."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Kayıtlar dışa aktarılamadı."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kayıtlar dışa aktarılamadı."
           }
         }
       }
     },
-    "settings.logs.open" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Folder"
+    "settings.logs.open": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Folder"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Klasörü Aç"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klasörü Aç"
           }
         }
       }
     },
-    "settings.noDevices" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No paired devices yet. Devices appear here after the first connection."
+    "settings.noDevices": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No paired devices yet. Devices appear here after the first connection."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Henüz eşleşmiş cihaz yok. Cihazlar ilk bağlantıdan sonra burada görünür."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Henüz eşleşmiş cihaz yok. Cihazlar ilk bağlantıdan sonra burada görünür."
           }
         }
       }
     },
-    "settings.permissions" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Permissions"
+    "settings.permissions": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permissions"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İzinler"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzinler"
           }
         }
       }
     },
-    "settings.permissions.open" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show…"
+    "settings.permissions.open": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Göster…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göster…"
           }
         }
       }
     },
-    "settings.statsHotkey" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show or hide statistics"
+    "settings.statsHotkey": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show or hide statistics"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İstatistikleri göster veya gizle"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İstatistikleri göster veya gizle"
           }
         }
       }
     },
-    "settings.statsOverlay" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Show statistics on watched displays"
+    "settings.statsOverlay": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show statistics on watched displays"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İzlenen ekranlarda istatistikleri göster"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İzlenen ekranlarda istatistikleri göster"
           }
         }
       }
     },
-    "settings.statsOverlay.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Frames per second, bitrate, round trip, loss and latency in the top-left corner."
+    "settings.statsOverlay.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frames per second, bitrate, round trip, loss and latency in the top-left corner."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saniyedeki kare, bit hızı, gidiş-dönüş süresi, kayıp ve gecikme sol üst köşede gösterilir."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saniyedeki kare, bit hızı, gidiş-dönüş süresi, kayıp ve gecikme sol üst köşede gösterilir."
           }
         }
       }
     },
-    "settings.swapHotkey" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Swap roles"
+    "settings.swapHotkey": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Swap roles"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rolleri değiştir"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rolleri değiştir"
           }
         }
       }
     },
-    "settings.swapHotkey.description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Works in any app while connected: the computer used as a display starts extending the other one, without pairing again. A new shortcut applies from the next connection."
+    "settings.swapHotkey.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Works in any app while connected: the computer used as a display starts extending the other one, without pairing again. A new shortcut applies from the next connection."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Bağlıyken her uygulamada çalışır: ekran olarak kullanılan bilgisayar, yeniden eşleştirmeden diğerini genişletmeye başlar. Yeni kısayol bir sonraki bağlantıdan itibaren geçerli olur."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bağlıyken her uygulamada çalışır: ekran olarak kullanılan bilgisayar, yeniden eşleştirmeden diğerini genişletmeye başlar. Yeni kısayol bir sonraki bağlantıdan itibaren geçerli olur."
           }
         }
       }
     },
-    "stats.accessibilityLabel" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stream statistics"
+    "settings.viewerInWindow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Show the streamed screen in a window instead of full screen"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Akış istatistikleri"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yayınlanan ekranı tam ekran yerine bir pencerede göster"
           }
         }
       }
     },
-    "stats.overlay %lld %@ %@ %@ %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld fps · %2$@ Mbit/s · RTT %3$@ ms · loss %4$@%% · latency %5$@ ms"
+    "settings.viewerInWindow.description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The streamed screen opens as a window you can move and resize."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$lld fps · %2$@ Mbit/sn · RTT %3$@ ms · kayıp %%%4$@ · gecikme %5$@ ms"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yayınlanan ekran, taşınıp boyutlandırılabilen bir pencere olarak açılır."
           }
         }
       }
     },
-    "streamSize.hd1080" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1080p"
+    "stats.accessibilityLabel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stream statistics"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1080p"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Akış istatistikleri"
           }
         }
       }
     },
-    "streamSize.hd720" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "720p"
+    "stats.overlay %lld %@ %@ %@ %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld fps · %2$@ Mbit/s · RTT %3$@ ms · loss %4$@%% · latency %5$@ ms"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "720p"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld fps · %2$@ Mbit/sn · RTT %3$@ ms · kayıp %%%4$@ · gecikme %5$@ ms"
           }
         }
       }
     },
-    "streamSize.native" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Native"
+    "streamSize.hd1080": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1080p"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Doğal"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1080p"
           }
         }
       }
     },
-    "streamSize.qhd1440" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1440p"
+    "streamSize.hd720": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "720p"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1440p"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "720p"
           }
         }
       }
     },
-    "updates.automatic" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check for updates once a day"
+    "streamSize.native": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Native"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Günde bir kez güncellemeleri denetle"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Doğal"
           }
         }
       }
     },
-    "updates.available %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay %@ is available."
+    "streamSize.qhd1440": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1440p"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay %@ yayımlandı."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1440p"
           }
         }
       }
     },
-    "updates.checkNow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Check Now"
+    "updates.automatic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check for updates once a day"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Şimdi Denetle"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Günde bir kez güncellemeleri denetle"
           }
         }
       }
     },
-    "updates.checking" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checking…"
+    "updates.available %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay %@ is available."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Denetleniyor…"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay %@ yayımlandı."
           }
         }
       }
     },
-    "updates.download" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Download"
+    "updates.checkNow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Check Now"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "İndir"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Şimdi Denetle"
           }
         }
       }
     },
-    "updates.failed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Could not reach GitHub. Try again later."
+    "updates.checking": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checking…"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "GitHub'a ulaşılamadı. Daha sonra yeniden deneyin."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denetleniyor…"
           }
         }
       }
     },
-    "updates.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Updates"
+    "updates.download": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Güncellemeler"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndir"
           }
         }
       }
     },
-    "updates.upToDate" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay is up to date."
+    "updates.failed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Could not reach GitHub. Try again later."
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Osplay güncel."
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub'a ulaşılamadı. Daha sonra yeniden deneyin."
           }
         }
       }
     },
-    "updates.version %@" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version %@"
+    "updates.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
           }
         },
-        "tr" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sürüm %@"
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeler"
+          }
+        }
+      }
+    },
+    "updates.upToDate": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay is up to date."
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osplay güncel."
+          }
+        }
+      }
+    },
+    "updates.version %@": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm %@"
           }
         }
       }
     }
   },
-  "version" : "1.0"
+  "version": "1.0"
 }

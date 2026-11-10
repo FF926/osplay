@@ -221,6 +221,11 @@ private struct AdvancedSettings: View {
 
     var body: some View {
         Form {
+            Toggle("settings.viewerInWindow", isOn: $settings.viewerShowsInWindow)
+            Text("settings.viewerInWindow.description")
+                .font(Theme.Typography.caption)
+                .foregroundStyle(Theme.Colors.secondary)
+                .fixedSize(horizontal: false, vertical: true)
             Toggle("settings.statsOverlay", isOn: $settings.showsStatsOverlay)
             Text("settings.statsOverlay.description")
                 .font(Theme.Typography.caption)
