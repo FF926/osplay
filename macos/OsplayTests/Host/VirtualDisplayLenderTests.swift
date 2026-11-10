@@ -23,7 +23,8 @@ struct VirtualDisplayLenderTests {
             [monitor(id: 0, scalePercent: 100), monitor(id: 1, scalePercent: 100)], peerID: Data("pc".utf8),
             hiDPI: .automatic, arrangement: [], saved: [:])
         let secondDisplays = try await second.lend(
-            [monitor(id: 0, scalePercent: 100)], peerID: Data("mac".utf8), hiDPI: .automatic, arrangement: [], saved: [:])
+            [monitor(id: 0, scalePercent: 100)], peerID: Data("mac".utf8), hiDPI: .automatic,
+            arrangement: [], saved: [:])
         #expect(provider.handles.count == 3, "a new viewer leaves the others' displays alone")
 
         second.returnAll()
@@ -83,7 +84,8 @@ struct VirtualDisplayLenderTests {
         let lender = VirtualDisplayLender(provider: provider, arrange: { _ in })
 
         let lent = try await lender.lend(
-            [monitor(id: 0, scalePercent: 200)], peerID: Data("peer".utf8), hiDPI: .automatic, arrangement: [], saved: [:])
+            [monitor(id: 0, scalePercent: 200)], peerID: Data("peer".utf8), hiDPI: .automatic,
+            arrangement: [], saved: [:])
 
         let full = DisplaySize(width: 2560, height: 1440)
         #expect(lent.count == 1)

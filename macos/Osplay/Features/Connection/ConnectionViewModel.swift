@@ -886,7 +886,7 @@ final class ConnectionViewModel {
     private func awaitHost(_ deviceID: String, timeout: Duration?, onTimeout: (() -> Void)? = nil) {
         autoConnectTimeout?.cancel()
         if viewer != nil {
-            return // (fork) the direct connect already got in; nothing to wait for
+            return  // (fork) the direct connect already got in; nothing to wait for
         }
         if let device = devices.first(where: { $0.advertisement.deviceID == deviceID }) {
             autoConnectDeviceID = nil

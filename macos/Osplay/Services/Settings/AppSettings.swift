@@ -82,7 +82,10 @@ final class AppSettings {
         hiDPIChoices = Self.load([String: HiDPIChoice].self, from: defaults, forKey: Key.hiDPIChoices) ?? [:]
         arrangements = Self.load([String: [ArrangedMonitor]].self, from: defaults, forKey: Key.arrangements) ?? [:]
         savedResolutions = Self.load(
-            [String: [UInt8: DisplayResolution]].self, from: defaults, forKey: Key.savedResolutions) ?? [:]
+            [String: [UInt8: DisplayResolution]].self,
+            from: defaults,
+            forKey: Key.savedResolutions
+        ) ?? [:]
     }
 
     /// Per paired device (by device ID), where each of its monitors sits next to this Mac.
