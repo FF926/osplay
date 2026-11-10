@@ -51,3 +51,4 @@ android/.kotlin/
 android/.idea/
 # Android Studio's "Generate Signed APK" output; released APKs go to android/release/.
 android/app/release/
+build/ ./*.json
