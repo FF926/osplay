@@ -26,27 +26,13 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
         window.contentView = content
     }
 
-    /// (fork) Fullscreen is entered once, on the first show: macOS then moves the window into its
-    /// own Space, where the streamed screen lives as a desktop next to this Mac's.
-    private var enteredFullScreen = false
-
     func show() {
         if case .fullScreen = target {
             NSApp.activate()
             window.makeKeyAndOrderFront(nil)
-            enterFullScreenOnce()
             restartIdleTimer()
         } else {
             window.makeKeyAndOrderFront(nil)
-        }
-    }
-
-    /// (fork) Enters real fullscreen on the first show; later shows return to the same Space.
-    private func enterFullScreenOnce() {
-        guard !enteredFullScreen else { return }
-        enteredFullScreen = true
-        if !window.styleMask.contains(.fullScreen) {
-            window.toggleFullScreen(nil)
         }
     }
 
@@ -114,21 +100,15 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
         case .fullScreen(let displayID):
             let screen = NSScreen.screens.first { $0.displayID == displayID } ?? NSScreen.main
             let frame = screen?.frame ?? .zero
-            // (fork) A real fullscreen window owns its own Space: the viewer swipes between this
-            // Mac's desktops and the streamed screen with the usual gestures. With "Displays have
-            // separate Spaces" (the default), each streamed display gets a Space of its own. The
-            // title bar is hidden and fullscreen is entered as soon as the window shows.
             let window = NSWindow(
-                contentRect: frame, styleMask: [.titled, .resizable], backing: .buffered, defer: false,
-                screen: screen)
-            window.titleVisibility = .hidden
-            window.titlebarAppearsTransparent = true
-            window.collectionBehavior = [.fullScreenPrimary, .ignoresCycle]
+                contentRect: frame, styleMask: .borderless, backing: .buffered, defer: false, screen: screen)
+            // Above the menu bar and the Dock of that screen, on every Space.
+            window.level = .init(rawValue: NSWindow.Level.mainMenu.rawValue + 1)
+            window.collectionBehavior = [.canJoinAllSpaces, .stationary, .ignoresCycle, .fullScreenAuxiliary]
             window.backgroundColor = NSColor(Theme.Viewer.background)
             window.setFrame(frame, display: false)
             window.acceptsMouseMovedEvents = true
             window.isReleasedWhenClosed = false
-            window.isMovableByWindowBackground = false
             return window
         case .window(let title):
             let size = Tunables.Viewer.loopbackWindowSize(streamWidth: stream.width, streamHeight: stream.height)
