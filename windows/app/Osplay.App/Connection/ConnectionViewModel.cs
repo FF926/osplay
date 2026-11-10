@@ -25,6 +25,9 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
     private readonly AppSettings _settings;
     private readonly string _deviceName = System.Net.Dns.GetHostName();
     private readonly Dictionary<string, DeviceInfo> _found = [];
+    /// <summary>(fork) The last computer each peer was seen as: a swap connects straight to it
+    /// instead of waiting for Bonjour.</summary>
+    private readonly Dictionary<string, DeviceInfo> _lastSeen = [];
     private readonly SemaphoreSlim _gate = new(1, 1);
     private readonly HashSet<string> _pairedNames = new(StringComparer.CurrentCultureIgnoreCase);
     private EngineBrowser? _browser;
@@ -666,6 +669,7 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
             return;
         }
         _found[device.Label] = device;
+        _lastSeen[device.DeviceId] = device;
         RebuildDevices();
         if (device.DeviceId == _autoConnectDeviceId)
         {
@@ -870,6 +874,13 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
             return;
         }
         Status = Format(Localization.Strings.ConnectionStatusSwapping, swap.PeerName);
+        // (fork) The new host listens on its last known address and port within a second or two:
+        // connecting straight there beats waiting for Bonjour. The discovery wait stays as the
+        // fallback for when that address has changed.
+        if (_lastSeen.TryGetValue(swap.PeerDeviceId, out DeviceInfo? last))
+        {
+            _ = ConnectAsync(last);
+        }
         if (!await AwaitHostAsync(swap.PeerDeviceId, AppTunables.SwapReconnectTimeout).ConfigureAwait(true))
         {
             ErrorMessage = Localization.Strings.ErrorSwapNotFound;
@@ -879,10 +890,15 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
 
     /// <summary>
     /// Connects to this device as soon as Bonjour finds it as a host. Returns false when the
-    /// timeout passed first; a null timeout waits as long as viewing stays on.
+    /// timeout passed first; a null timeout waits as long as viewing stays on. A direct connect
+    /// that is already talking to the host wins over this.
     /// </summary>
     private async Task<bool> AwaitHostAsync(string deviceId, TimeSpan? timeout)
     {
+        if (_viewer is not null)
+        {
+            return true; // (fork) the direct connect already got in; nothing to wait for
+        }
         DeviceInfo? known = _found.Values.FirstOrDefault(d => d.DeviceId == deviceId);
         if (known is not null)
         {
@@ -905,9 +921,9 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
         {
             return true; // found, or the mode changed
         }
-        if (_autoConnectDeviceId != deviceId)
+        if (_autoConnectDeviceId != deviceId || _viewer is not null)
         {
-            return true;
+            return true; // found, the mode changed, or (fork) the direct connect already got in
         }
         _autoConnectDeviceId = null;
         return false;
