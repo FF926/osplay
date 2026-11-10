@@ -2,7 +2,7 @@ import CoreGraphics
 import Foundation
 
 /// A width and height in whole pixels or points.
-struct DisplaySize: Hashable, Sendable, CustomStringConvertible {
+struct DisplaySize: Hashable, Sendable, Codable, CustomStringConvertible {
     let width: Int
     let height: Int
 
@@ -50,7 +50,7 @@ struct VirtualDisplayIdentity: Hashable, Sendable {
 
 /// A resolution the user can choose for a display: what it "looks like" in points, and the
 /// pixel backing the window server renders (twice the points for HiDPI modes).
-struct DisplayResolution: Hashable, Sendable {
+struct DisplayResolution: Hashable, Sendable, Codable {
     let points: DisplaySize
     let pixels: DisplaySize
     let refreshRate: Double

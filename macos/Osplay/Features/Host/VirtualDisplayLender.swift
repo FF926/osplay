@@ -14,10 +14,12 @@ struct LentDisplay: Sendable, Hashable {
 /// without the window server.
 @MainActor
 protocol DisplayLending: AnyObject, Sendable {
-    /// One display per monitor, ready, in the HiDPI choice's resolution and placed as `arrangement`
-    /// says when it still fits these monitors (a row to the right otherwise). All or nothing.
+    /// One display per monitor, ready, in the saved resolution for that monitor when there is
+    /// one, otherwise in the HiDPI choice's resolution — placed as `arrangement` says when it
+    /// still fits these monitors (a row to the right otherwise). All or nothing.
     func lend(
-        _ monitors: [MonitorDescription], peerID: Data, hiDPI: HiDPIChoice, arrangement: [ArrangedMonitor]
+        _ monitors: [MonitorDescription], peerID: Data, hiDPI: HiDPIChoice,
+        arrangement: [ArrangedMonitor], saved: [UInt8: DisplayResolution]
     ) async throws(VirtualDisplayError) -> [LentDisplay]
     func returnDisplay(_ displayID: CGDirectDisplayID)
     func returnAll()
@@ -44,7 +46,8 @@ final class VirtualDisplayLender: DisplayLending {
     }
 
     func lend(
-        _ monitors: [MonitorDescription], peerID: Data, hiDPI: HiDPIChoice, arrangement: [ArrangedMonitor]
+        _ monitors: [MonitorDescription], peerID: Data, hiDPI: HiDPIChoice,
+        arrangement: [ArrangedMonitor], saved: [UInt8: DisplayResolution]
     ) async throws(VirtualDisplayError) -> [LentDisplay] {
         returnAll()
         do throws(VirtualDisplayError) {
@@ -57,7 +60,8 @@ final class VirtualDisplayLender: DisplayLending {
             var sizes: [(id: UInt8, name: String, size: CGSize)] = []
             for (monitor, handle) in lent {
                 try await handle.waitUntilReady()
-                let resolution = try Self.activateInitialResolution(on: handle, for: monitor, choice: hiDPI)
+                let resolution = try Self.activateInitialResolution(
+                    on: handle, for: monitor, choice: hiDPI, saved: saved[monitor.id])
                 let points = CGSize(width: resolution.points.width, height: resolution.points.height)
                 sizes.append((monitor.id, handle.configuration.name, points))
             }
@@ -91,22 +95,26 @@ final class VirtualDisplayLender: DisplayLending {
         }
     }
 
-    /// The initial resolution, or the native one when the window server does not offer it: a
-    /// missing default must not end the session, and the native mode is always there.
+    /// The saved resolution for this monitor, else the automatic one — or the native mode when
+    /// the window server does not offer the choice: a missing default must not end the session,
+    /// and the native mode is always there.
     private static func activateInitialResolution(
-        on handle: any VirtualDisplayHandle, for monitor: MonitorDescription, choice: HiDPIChoice
+        on handle: any VirtualDisplayHandle, for monitor: MonitorDescription, choice: HiDPIChoice,
+        saved: DisplayResolution?
     ) throws(VirtualDisplayError) -> DisplayResolution {
-        let preferred = initialResolution(for: monitor, choice: choice, configuration: handle.configuration)
+        let computed = initialResolution(for: monitor, choice: choice, configuration: handle.configuration)
         let native = handle.configuration.nativeResolution
-        do throws(VirtualDisplayError) {
-            try handle.activate(preferred)
-            return preferred
-        } catch .resolutionUnavailable where preferred != native {
-            Log.virtualDisplay.error(
-                "Display \(handle.displayID) has no \(preferred.points) at \(preferred.pixels); using the native mode")
-            try handle.activate(native)
-            return native
+        let attempts = saved.map { [$0, computed].filter { $0 != native } } ?? [computed]
+        for resolution in attempts {
+            do throws(VirtualDisplayError) {
+                try handle.activate(resolution)
+                return resolution
+            } catch .resolutionUnavailable {
+                continue // not offered (the offered modes changed): the next attempt still works
+            }
         }
+        try handle.activate(native)
+        return native
     }
 
     /// The user's choice for this viewer, or by default the viewer's own scaling: a monitor run

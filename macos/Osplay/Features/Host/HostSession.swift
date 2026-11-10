@@ -1,4 +1,5 @@
 import CoreBridge
+import CoreGraphics
 import Foundation
 import OSLog
 
@@ -29,6 +30,12 @@ struct HostDisplayPolicy: Sendable {
     var quality: QualityPreset = .high
     /// The developer tools stream at the monitor's size; the app passes the user's setting.
     var streamSize: StreamSizePreset = .native
+    /// (fork) This viewer's monitors' last resolutions; the displays start there instead of the
+    /// automatic choice, so a mode the user picked in System Settings survives a reconnect.
+    var savedResolutions: [UInt8: DisplayResolution] = [:]
+    /// (fork) Runs when the session's displays go away, with their final resolutions, so the
+    /// next session for this viewer starts where this one ended.
+    var saveResolutions: @Sendable ([UInt8: DisplayResolution]) -> Void = { _ in }
 }
 
 /// Why a host session ended other than by an orderly close.
@@ -74,6 +81,10 @@ actor HostSession {
     /// Taken from `budget` for this viewer; given back as its displays go.
     private var heldDisplays = 0
     private var failure: HostSessionError?
+    /// (fork) This session's displays and the policy that lent them, for saving the final
+    /// resolutions when the session ends.
+    private var lentDisplays: [LentDisplay] = []
+    private var activePolicy: HostDisplayPolicy?
 
     init(
         core: any HostCoreSession, policy: @escaping @Sendable () async -> HostDisplayPolicy,
@@ -199,14 +210,17 @@ actor HostSession {
         heldDisplays = granted
         let offered = monitors.prefix(granted).map(Self.capped)
         let policy = await policy()
+        activePolicy = policy
         let lent: [LentDisplay]
         do {
             lent = try await displays.lend(
-                offered, peerID: policy.peerID, hiDPI: policy.hiDPI, arrangement: policy.arrangement)
+                offered, peerID: policy.peerID, hiDPI: policy.hiDPI, arrangement: policy.arrangement,
+                saved: policy.savedResolutions)
         } catch {
             end(with: .display(error))
             return
         }
+        lentDisplays = lent
         let streams = lent.enumerated().map { index, display in
             Self.streamConfiguration(
                 id: UInt8(index), for: display.monitor, quality: policy.quality, streamSize: policy.streamSize)
@@ -277,6 +291,21 @@ actor HostSession {
         for pipeline in running {
             await pipeline.stop()
         }
+        // (fork) Remember the displays' final resolutions, so the next session for this viewer
+        // starts where this one ended: the user may have picked another mode in System Settings.
+        let final = lentDisplays.reduce(into: [UInt8: DisplayResolution]()) { result, display in
+            if let mode = CGDisplayCopyDisplayMode(display.displayID) {
+                result[display.monitor.id] = DisplayResolution(
+                    points: DisplaySize(width: Int(mode.width), height: Int(mode.height)),
+                    pixels: DisplaySize(width: Int(mode.pixelWidth), height: Int(mode.pixelHeight)),
+                    refreshRate: mode.refreshRate)
+            }
+        }
+        if !final.isEmpty {
+            activePolicy?.saveResolutions(final)
+        }
+        lentDisplays = []
+        activePolicy = nil
         await displays.returnAll()
         budget.giveBack(heldDisplays)
         heldDisplays = 0

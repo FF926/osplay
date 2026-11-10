@@ -21,9 +21,9 @@ struct VirtualDisplayLenderTests {
 
         let firstDisplays = try await first.lend(
             [monitor(id: 0, scalePercent: 100), monitor(id: 1, scalePercent: 100)], peerID: Data("pc".utf8),
-            hiDPI: .automatic, arrangement: [])
+            hiDPI: .automatic, arrangement: [], saved: [:])
         let secondDisplays = try await second.lend(
-            [monitor(id: 0, scalePercent: 100)], peerID: Data("mac".utf8), hiDPI: .automatic, arrangement: [])
+            [monitor(id: 0, scalePercent: 100)], peerID: Data("mac".utf8), hiDPI: .automatic, arrangement: [], saved: [:])
         #expect(provider.handles.count == 3, "a new viewer leaves the others' displays alone")
 
         second.returnAll()
@@ -42,7 +42,7 @@ struct VirtualDisplayLenderTests {
 
         _ = try await lender.lend(
             [monitor(id: 0, scalePercent: 100), monitor(id: 1, scalePercent: 200)], peerID: Data("peer".utf8),
-            hiDPI: .automatic, arrangement: [])
+            hiDPI: .automatic, arrangement: [], saved: [:])
 
         let full = DisplaySize(width: 2560, height: 1440)
         #expect(provider.handles[0].activated.map(\.points) == [full])
@@ -57,7 +57,7 @@ struct VirtualDisplayLenderTests {
         let lender = VirtualDisplayLender(provider: provider, arrange: { _ in })
 
         _ = try await lender.lend(
-            [monitor(id: 0, scalePercent: 100)], peerID: Data("peer".utf8), hiDPI: .always, arrangement: [])
+            [monitor(id: 0, scalePercent: 100)], peerID: Data("peer".utf8), hiDPI: .always, arrangement: [], saved: [:])
 
         #expect(provider.handles[0].activated.map(\.points) == [DisplaySize(width: 1280, height: 720)])
     }
@@ -70,7 +70,7 @@ struct VirtualDisplayLenderTests {
             id: 0, widthPixels: 3420, heightPixels: 2214, refreshMillihertz: 60_000, physicalWidthMillimeters: 331,
             physicalHeightMillimeters: 214, scalePercent: 200, name: "Built-in Retina Display")
 
-        _ = try await lender.lend([panel], peerID: Data("peer".utf8), hiDPI: .automatic, arrangement: [])
+        _ = try await lender.lend([panel], peerID: Data("peer".utf8), hiDPI: .automatic, arrangement: [], saved: [:])
 
         #expect(provider.handles[0].activated.map(\.points) == [DisplaySize(width: 1710, height: 1107)])
         #expect(provider.handles[0].activated.map(\.pixels) == [DisplaySize(width: 3420, height: 2214)])
@@ -83,7 +83,7 @@ struct VirtualDisplayLenderTests {
         let lender = VirtualDisplayLender(provider: provider, arrange: { _ in })
 
         let lent = try await lender.lend(
-            [monitor(id: 0, scalePercent: 200)], peerID: Data("peer".utf8), hiDPI: .automatic, arrangement: [])
+            [monitor(id: 0, scalePercent: 200)], peerID: Data("peer".utf8), hiDPI: .automatic, arrangement: [], saved: [:])
 
         let full = DisplaySize(width: 2560, height: 1440)
         #expect(lent.count == 1)
