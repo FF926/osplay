@@ -138,6 +138,9 @@ final class ConnectionViewModel {
     /// Viewing after a swap: connects to this device as soon as Bonjour finds it.
     private var autoConnectDeviceID: String?
     private var autoConnectTimeout: Task<Void, Never>?
+    /// (fork) The last computer each peer was seen as: a swap connects straight to it instead of
+    /// waiting for Bonjour.
+    private var lastSeenDevices: [String: DiscoveredDevice] = [:]
     private var reconnectTask: Task<Void, Never>?
     /// The port sharing listened on last; the next session listens there again.
     private var sharePort: UInt16 = 0
@@ -424,7 +427,13 @@ final class ConnectionViewModel {
                     return HostDisplayPolicy(
                         peerID: Data(key), hiDPI: settings.hiDPIChoice(for: deviceID),
                         arrangement: settings.arrangement(for: deviceID), quality: settings.qualityPreset,
-                        streamSize: settings.streamSize)
+                        streamSize: settings.streamSize,
+                        savedResolutions: settings.savedResolutions(for: deviceID),
+                        saveResolutions: { [settings] resolutions in
+                            Task { @MainActor in
+                                settings.setSavedResolutions(resolutions, for: deviceID)
+                            }
+                        })
                 }
             },
             displays: VirtualDisplayLender(provider: dependencies.virtualDisplays), budget: displayBudget,
@@ -724,6 +733,7 @@ final class ConnectionViewModel {
             devices.removeAll { $0.label == device.label }
             devices.append(device)
             devices.sort { $0.advertisement.name.localizedStandardCompare($1.advertisement.name) == .orderedAscending }
+            lastSeenDevices[device.advertisement.deviceID] = device
             if device.advertisement.deviceID == autoConnectDeviceID {
                 autoConnectDeviceID = nil
                 autoConnectTimeout?.cancel()
@@ -872,9 +882,12 @@ final class ConnectionViewModel {
     }
 
     /// Connects to this device as soon as Bonjour finds it as a host; `timeout` nil waits as long as
-    /// viewing stays on.
+    /// viewing stays on. A direct connect that is already talking to the host wins over this.
     private func awaitHost(_ deviceID: String, timeout: Duration?, onTimeout: (() -> Void)? = nil) {
         autoConnectTimeout?.cancel()
+        if viewer != nil {
+            return // (fork) the direct connect already got in; nothing to wait for
+        }
         if let device = devices.first(where: { $0.advertisement.deviceID == deviceID }) {
             autoConnectDeviceID = nil
             connect(to: device)
@@ -884,7 +897,7 @@ final class ConnectionViewModel {
         guard let timeout else { return }
         autoConnectTimeout = Task { [weak self] in
             try? await Task.sleep(for: timeout)
-            guard !Task.isCancelled, let self, autoConnectDeviceID == deviceID else { return }
+            guard !Task.isCancelled, let self, autoConnectDeviceID == deviceID, viewer == nil else { return }
             autoConnectDeviceID = nil
             onTimeout?()
         }
@@ -955,6 +968,12 @@ final class ConnectionViewModel {
         setMode(swap.role)
         guard swap.role == .viewing else { return }
         status = .swapping(peer: swap.peerName)
+        // (fork) The new host listens on its last known address and port within a second or two:
+        // connecting straight there beats waiting for Bonjour. The discovery wait below stays as
+        // the fallback for when that address has changed.
+        if let last = lastSeenDevices[swap.peerDeviceID] {
+            connect(to: last)
+        }
         awaitHost(swap.peerDeviceID, timeout: Tunables.Connection.swapReconnectTimeout) { [weak self] in
             self?.error = .roleSwapPeerNotFound
             self?.status = .idle
