@@ -101,7 +101,7 @@ VirtualMonitorConfig config(std::uint32_t width = 2560) {
     return {.width = width, .height = 1440, .refresh_millihertz = 60'000, .gpu_name = ""};
 }
 
-TEST(VirtualDisplayHub, CreateConfiguresThenEnablesItsDevices) {
+TEST(VirtualDisplayHub, CreateConfiguresThenEnablesItsDevicesOneByOne) {
     Fixture f;
     HubVirtualDisplays session(f.hub);
 
@@ -109,11 +109,15 @@ TEST(VirtualDisplayHub, CreateConfiguresThenEnablesItsDevices) {
 
     ASSERT_TRUE(names.has_value());
     EXPECT_EQ(names.value(), (std::vector<std::wstring>{L"DISPLAY1", L"DISPLAY2"}));
-    ASSERT_EQ(f.channel->requests.size(), 2U);
+    ASSERT_EQ(f.channel->requests.size(), 3U);
     EXPECT_EQ(f.channel->requests[0].command, helper::Command::Configure);
     EXPECT_EQ(f.channel->requests[0].monitors, (std::vector{config(), config(1920)}));
+    // One device per Enable request: devices enabled together share a driver process until
+    // their next start, and the second monitor would then offer only the first one's modes (#30).
     EXPECT_EQ(f.channel->requests[1].command, helper::Command::Enable);
-    EXPECT_EQ(f.channel->requests[1].devices, 0b11);
+    EXPECT_EQ(f.channel->requests[1].devices, 0b01);
+    EXPECT_EQ(f.channel->requests[2].command, helper::Command::Enable);
+    EXPECT_EQ(f.channel->requests[2].devices, 0b10);
     EXPECT_EQ(f.applier->applied, (std::vector{config(), config(1920)}));
 }
 
