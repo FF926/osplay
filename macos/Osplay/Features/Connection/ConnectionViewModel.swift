@@ -227,14 +227,14 @@ final class ConnectionViewModel {
         }
         // Each of the host's streams is shown on the display whose monitor it extends onto.
         let places = Dictionary(uniqueKeysWithValues: offered.map { ($0.id, $0.displayID) })
+        // (fork) A viewer setting shows the stream in a movable window instead of a full-screen
+        // display, so the extended screen can sit on the desktop like a normal window. Read once
+        // at connect: the session runs on engine threads, off the main actor.
+        let showsInWindow = dependencies.settings.viewerShowsInWindow
         let session = ViewerSession(
             core: core, decoders: dependencies.decoders, presenters: dependencies.presenters,
             power: dependencies.power,
-            // (fork) A viewer setting shows the stream in a movable window instead of a full-screen
-            // display, so the extended screen can sit on the desktop like a normal window. Read
-            // once at connect: the session runs on engine threads, off the main actor.
-            let showsInWindow = settings.viewerShowsInWindow
-            target: { [name = device.advertisement.name, showsInWindow] stream in
+            target: { [name = device.advertisement.name, showsInWindow = showsInWindow] stream in
                 if showsInWindow {
                     return .window(title: name)
                 }
