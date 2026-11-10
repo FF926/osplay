@@ -1,0 +1,121 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 129648838046,
+      "run_id": 42761756499,
+      "workflow_name": "Release",
+      "head_branch": "v0.2.4",
+      "run_url": "https://api.github.com/repos/FF926/osplay/actions/runs/42761756499",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVn52L88AAAAeL6xFng",
+      "head_sha": "04c69b886236c0aec034f26cbfa90ed70168ee57",
+      "url": "https://api.github.com/repos/FF926/osplay/actions/jobs/129648838046",
+      "html_url": "https://github.com/FF926/osplay/actions/runs/42761756499/job/129648838046",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-10T05:22:45Z",
+      "started_at": "2026-11-10T05:22:47Z",
+      "completed_at": "2026-11-10T05:26:36Z",
+      "name": "Windows installer",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-10T05:22:48Z",
+          "completed_at": "2026-11-10T05:22:49Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-10T05:22:49Z",
+          "completed_at": "2026-11-10T05:22:56Z"
+        },
+        {
+          "name": "Run actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-10T05:22:56Z",
+          "completed_at": "2026-11-10T05:22:59Z"
+        },
+        {
+          "name": "Check the version",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-10T05:22:59Z",
+          "completed_at": "2026-11-10T05:23:01Z"
+        },
+        {
+          "name": "Install Inno Setup",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-10T05:23:01Z",
+          "completed_at": "2026-11-10T05:23:07Z"
+        },
+        {
+          "name": "Build the installer",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 6,
+          "started_at": "2026-11-10T05:23:07Z",
+          "completed_at": "2026-11-10T05:26:32Z"
+        },
+        {
+          "name": "Run actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-11-10T05:26:32Z",
+          "completed_at": "2026-11-10T05:26:32Z"
+        },
+        {
+          "name": "Attach the installer to the draft release",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-11-10T05:26:32Z",
+          "completed_at": "2026-11-10T05:26:32Z"
+        },
+        {
+          "name": "Post Run actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 15,
+          "started_at": "2026-11-10T05:26:32Z",
+          "completed_at": "2026-11-10T05:26:32Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-10T05:26:32Z",
+          "completed_at": "2026-11-10T05:26:35Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-10T05:26:35Z",
+          "completed_at": "2026-11-10T05:26:35Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/FF926/osplay/check-runs/129648838046",
+      "labels": [
+        "windows-2025"
+      ],
+      "runner_id": 1000000078,
+      "runner_name": "GitHub Actions 1000000078",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}
