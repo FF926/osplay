@@ -63,10 +63,10 @@ VirtualDisplayHub::create_monitors(const void* owner,
     // Devices are enabled ONE PER REQUEST (issue #30): devices enabled together start in one
     // shared driver process until their next start, and the second monitor then offers only the
     // first one's modes. One request per device gives each new device a fresh process of its own.
-    for (std::size_t i = 0; i < picked.size(); ++i) {
+    for (const auto picked_index : picked) {
         if (const auto enabled = send_expecting_ok({.command = helper::Command::Enable,
                                                     .monitors = {},
-                                                    .devices = device_bit(picked[i])});
+                                                    .devices = device_bit(picked_index)});
             !enabled) {
             forget(owner);
             return Result::failure(enabled.error());

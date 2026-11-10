@@ -147,4 +147,30 @@
     "contents_url": "https://api.github.com/repos/FF926/osplay/contents/{+path}",
     "compare_url": "https://api.github.com/repos/FF926/osplay/compare/{base}...{head}",
     "merges_url": "https://api.github.com/repos/FF926/osplay/merges",
-    "archive_url": "https://api.github.com/repos/FF926/osplay/{archive_fo
+    "archive_url": "https://api.github.com/repos/FF926/osplay/{archive_format}{/ref}",
+    "downloads_url": "https://api.github.com/repos/FF926/osplay/downloads",
+    "issues_url": "https://api.github.com/repos/FF926/osplay/issues{/number}",
+    "pulls_url": "https://api.github.com/repos/FF926/osplay/pulls{/number}",
+    "milestones_url": "https://api.github.com/repos/FF926/osplay/milestones{/number}",
+    "notifications_url": "https://api.github.com/repos/FF926/osplay/notifications{?since,all,participating}",
+    "labels_url": "https://api.github.com/repos/FF926/osplay/labels{/name}",
+    "releases_url": "https://api.github.com/repos/FF926/osplay/releases{/id}",
+    "deployments_url": "https://api.github.com/repos/FF926/osplay/deployments"
+  },
+  "head_repository": {
+    "id": 1451128367,
+    "node_id": "R_kgDOVn52Lw",
+    "name": "osplay",
+    "full_name": "FF926/osplay",
+    "private": false,
+    "owner": {
+      "login": "FF926",
+      "id": 115127222,
+      "node_id": "U_kgDOBtyztg",
+      "avatar_url": "https://avatars.githubusercontent.com/u/115127222?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/FF926",
+      "html_url": "https://github.com/FF926",
+      "followers_url": "https://api.github.com/users/FF926/followers",
+      "following_url": "https://api.github.com/users/FF926/following{/other_user}",
+      "gists_url": "https://api.github.com/users/FF926/gists{/gist_id}

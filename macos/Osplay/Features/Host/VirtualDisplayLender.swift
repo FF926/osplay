@@ -119,7 +119,7 @@ final class VirtualDisplayLender: DisplayLending {
                 try handle.activate(resolution)
                 return resolution
             } catch .resolutionUnavailable {
-                continue // not offered (the offered modes changed): the next attempt still works
+                continue  // not offered (the offered modes changed): the next attempt still works
             }
         }
         try handle.activate(native)

@@ -1,0 +1,545 @@
+{
+  "total_count": 5,
+  "jobs": [
+    {
+      "id": 129681487182,
+      "run_id": 42771883019,
+      "workflow_name": "CI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/FF926/osplay/actions/runs/42771883019",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVn52L88AAAAeMZ51Tg",
+      "head_sha": "ea557052b2fb03df0b9bc7b36535e85e1cc16130",
+      "url": "https://api.github.com/repos/FF926/osplay/actions/jobs/129681487182",
+      "html_url": "https://github.com/FF926/osplay/actions/runs/42771883019/job/129681487182",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-10T06:57:11Z",
+      "started_at": "2026-11-10T06:57:13Z",
+      "completed_at": "2026-11-10T07:01:44Z",
+      "name": "Android",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-10T06:57:14Z",
+          "completed_at": "2026-11-10T06:57:15Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-10T06:57:15Z",
+          "completed_at": "2026-11-10T06:57:17Z"
+        },
+        {
+          "name": "Run actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-10T06:57:17Z",
+          "completed_at": "2026-11-10T06:57:17Z"
+        },
+        {
+          "name": "Android NDK and CMake",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-10T06:57:17Z",
+          "completed_at": "2026-11-10T06:57:43Z"
+        },
+        {
+          "name": "Build and unit test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-10T06:57:43Z",
+          "completed_at": "2026-11-10T07:01:41Z"
+        },
+        {
+          "name": "Post Run actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 9,
+          "started_at": "2026-11-10T07:01:41Z",
+          "completed_at": "2026-11-10T07:01:41Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-10T07:01:41Z",
+          "completed_at": "2026-11-10T07:01:41Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-10T07:01:41Z",
+          "completed_at": "2026-11-10T07:01:41Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/FF926/osplay/check-runs/129681487182",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000089,
+      "runner_name": "GitHub Actions 1000000089",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 129681487278,
+      "run_id": 42771883019,
+      "workflow_name": "CI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/FF926/osplay/actions/runs/42771883019",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVn52L88AAAAeMZ51rg",
+      "head_sha": "ea557052b2fb03df0b9bc7b36535e85e1cc16130",
+      "url": "https://api.github.com/repos/FF926/osplay/actions/jobs/129681487278",
+      "html_url": "https://github.com/FF926/osplay/actions/runs/42771883019/job/129681487278",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-10T06:57:11Z",
+      "started_at": "2026-11-10T06:57:14Z",
+      "completed_at": "2026-11-10T07:00:46Z",
+      "name": "macOS",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-10T06:57:14Z",
+          "completed_at": "2026-11-10T06:57:16Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-10T06:57:16Z",
+          "completed_at": "2026-11-10T06:57:19Z"
+        },
+        {
+          "name": "Run astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-10T06:57:19Z",
+          "completed_at": "2026-11-10T06:57:24Z"
+        },
+        {
+          "name": "Install build tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-10T06:57:24Z",
+          "completed_at": "2026-11-10T06:57:31Z"
+        },
+        {
+          "name": "Core — configure, build, test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-10T06:57:31Z",
+          "completed_at": "2026-11-10T06:58:52Z"
+        },
+        {
+          "name": "Portable Windows libraries — configure, build, test",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-10T06:58:52Z",
+          "completed_at": "2026-11-10T07:00:30Z"
+        },
+        {
+          "name": "Format, lint and localization checks",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 7,
+          "started_at": "2026-11-10T07:00:30Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "Swift package — build and test",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "macOS app — generate, build, test",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 9,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "(fork) macOS app — build Release for download",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 10,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "(fork) Upload the macOS app",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "iPad app — build, test on a simulator",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 12,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 23,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:36Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 24,
+          "started_at": "2026-11-10T07:00:36Z",
+          "completed_at": "2026-11-10T07:00:38Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 25,
+          "started_at": "2026-11-10T07:00:38Z",
+          "completed_at": "2026-11-10T07:00:43Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/FF926/osplay/check-runs/129681487278",
+      "labels": [
+        "macos-26"
+      ],
+      "runner_id": 1000000087,
+      "runner_name": "GitHub Actions 1000000087",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 129681487335,
+      "run_id": 42771883019,
+      "workflow_name": "CI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/FF926/osplay/actions/runs/42771883019",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVn52L88AAAAeMZ515w",
+      "head_sha": "ea557052b2fb03df0b9bc7b36535e85e1cc16130",
+      "url": "https://api.github.com/repos/FF926/osplay/actions/jobs/129681487335",
+      "html_url": "https://github.com/FF926/osplay/actions/runs/42771883019/job/129681487335",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-10T06:57:11Z",
+      "started_at": "2026-11-10T06:57:14Z",
+      "completed_at": "2026-11-10T07:02:52Z",
+      "name": "macOS sanitizers",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-10T06:57:14Z",
+          "completed_at": "2026-11-10T06:57:15Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-10T06:57:15Z",
+          "completed_at": "2026-11-10T06:57:18Z"
+        },
+        {
+          "name": "Install build tools",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-10T06:57:18Z",
+          "completed_at": "2026-11-10T06:57:21Z"
+        },
+        {
+          "name": "Core — AddressSanitizer and UndefinedBehaviorSanitizer",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-10T06:57:21Z",
+          "completed_at": "2026-11-10T06:59:19Z"
+        },
+        {
+          "name": "Core — ThreadSanitizer",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-10T06:59:19Z",
+          "completed_at": "2026-11-10T07:02:42Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 10,
+          "started_at": "2026-11-10T07:02:42Z",
+          "completed_at": "2026-11-10T07:02:43Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 11,
+          "started_at": "2026-11-10T07:02:43Z",
+          "completed_at": "2026-11-10T07:02:50Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/FF926/osplay/check-runs/129681487335",
+      "labels": [
+        "macos-26"
+      ],
+      "runner_id": 1000000088,
+      "runner_name": "GitHub Actions 1000000088",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 129681487505,
+      "run_id": 42771883019,
+      "workflow_name": "CI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/FF926/osplay/actions/runs/42771883019",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVn52L88AAAAeMZ52kQ",
+      "head_sha": "ea557052b2fb03df0b9bc7b36535e85e1cc16130",
+      "url": "https://api.github.com/repos/FF926/osplay/actions/jobs/129681487505",
+      "html_url": "https://github.com/FF926/osplay/actions/runs/42771883019/job/129681487505",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-11-10T06:57:11Z",
+      "started_at": "2026-11-10T06:57:13Z",
+      "completed_at": "2026-11-10T06:59:21Z",
+      "name": "Protocol fuzzing",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-10T06:57:14Z",
+          "completed_at": "2026-11-10T06:57:15Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-10T06:57:15Z",
+          "completed_at": "2026-11-10T06:57:16Z"
+        },
+        {
+          "name": "Build the fuzzer (Clang, libFuzzer, ASan, UBSan)",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-10T06:57:16Z",
+          "completed_at": "2026-11-10T06:58:16Z"
+        },
+        {
+          "name": "Seed the corpus with the protocol fixtures",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-10T06:58:16Z",
+          "completed_at": "2026-11-10T06:58:16Z"
+        },
+        {
+          "name": "Fuzz the protocol decoders for 30 seconds",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-11-10T06:58:16Z",
+          "completed_at": "2026-11-10T06:58:48Z"
+        },
+        {
+          "name": "Fuzz the handshake reader and media opener for 30 seconds",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-11-10T06:58:48Z",
+          "completed_at": "2026-11-10T06:59:19Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-11-10T06:59:19Z",
+          "completed_at": "2026-11-10T06:59:19Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-11-10T06:59:19Z",
+          "completed_at": "2026-11-10T06:59:19Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/FF926/osplay/check-runs/129681487505",
+      "labels": [
+        "ubuntu-24.04"
+      ],
+      "runner_id": 1000000091,
+      "runner_name": "GitHub Actions 1000000091",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    },
+    {
+      "id": 129681487556,
+      "run_id": 42771883019,
+      "workflow_name": "CI",
+      "head_branch": "main",
+      "run_url": "https://api.github.com/repos/FF926/osplay/actions/runs/42771883019",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOVn52L88AAAAeMZ52xA",
+      "head_sha": "ea557052b2fb03df0b9bc7b36535e85e1cc16130",
+      "url": "https://api.github.com/repos/FF926/osplay/actions/jobs/129681487556",
+      "html_url": "https://github.com/FF926/osplay/actions/runs/42771883019/job/129681487556",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-11-10T06:57:11Z",
+      "started_at": "2026-11-10T06:57:13Z",
+      "completed_at": "2026-11-10T07:07:43Z",
+      "name": "Windows",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-11-10T06:57:14Z",
+          "completed_at": "2026-11-10T06:57:16Z"
+        },
+        {
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-11-10T06:57:16Z",
+          "completed_at": "2026-11-10T06:57:23Z"
+        },
+        {
+          "name": "Run actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-11-10T06:57:23Z",
+          "completed_at": "2026-11-10T06:57:26Z"
+        },
+        {
+          "name": "Run astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-11-10T06:57:26Z",
+          "completed_at": "2026-11-10T06:57:31Z"
+        },
+        {
+          "name": "Native — configure, build, test, clang-tidy",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 5,
+          "started_at": "2026-11-10T06:57:31Z",
+          "completed_at": "2026-11-10T07:07:38Z"
+        },
+        {
+          "name": "Shell — format check",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-11-10T07:07:38Z",
+          "completed_at": "2026-11-10T07:07:38Z"
+        },
+        {
+          "name": "Shell — build",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-11-10T07:07:38Z",
+          "completed_at": "2026-11-10T07:07:38Z"
+        },
+        {
+          "name": "Shell — test",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-11-10T07:07:38Z",
+          "completed_at": "2026-11-10T07:07:38Z"
+        },
+        {
+          "name": "Post Run astral-sh/setup-uv@18d369b23da25a81e9458561248e1aafff6a70fa",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 14,
+          "started_at": "2026-11-10T07:07:38Z",
+          "completed_at": "2026-11-10T07:07:38Z"
+        },
+        {
+          "name": "Post Run actions/setup-dotnet@a98b56852c35b8e3190ac28c8c2271da59106c68",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 15,
+          "started_at": "2026-11-10T07:07:38Z",
+          "completed_at": "2026-11-10T07:07:38Z"
+        },
+        {
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-11-10T07:07:38Z",
+          "completed_at": "2026-11-10T07:07:41Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-11-10T07:07:41Z",
+          "completed_at": "2026-11-10T07:07:41Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/FF926/osplay/check-runs/129681487556",
+      "labels": [
+        "windows-2025"
+      ],
+      "runner_id": 1000000090,
+      "runner_name": "GitHub Actions 1000000090",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

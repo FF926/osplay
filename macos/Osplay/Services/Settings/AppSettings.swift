@@ -82,11 +82,8 @@ final class AppSettings {
         excludedDisplays = Self.load(Set<String>.self, from: defaults, forKey: Key.excludedDisplays) ?? []
         hiDPIChoices = Self.load([String: HiDPIChoice].self, from: defaults, forKey: Key.hiDPIChoices) ?? [:]
         arrangements = Self.load([String: [ArrangedMonitor]].self, from: defaults, forKey: Key.arrangements) ?? [:]
-        savedDisplays = Self.load(
-            [String: [UInt8: SavedDisplayState]].self,
-            from: defaults,
-            forKey: Key.savedDisplays
-        ) ?? [:]
+        let savedDisplayType = [String: [UInt8: SavedDisplayState]].self
+        savedDisplays = Self.load(savedDisplayType, from: defaults, forKey: Key.savedDisplays) ?? [:]
     }
 
     /// Per paired device (by device ID), where each of its monitors sits next to this Mac.
