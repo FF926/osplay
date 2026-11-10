@@ -219,6 +219,7 @@ internal struct NativeViewerConfig
     public nuint MonitorIdCount;
     public uint HotkeyModifiers;
     public uint HotkeyKey;
+    public int Windowed;
 }
 
 /// <summary>osplay_engine_viewer_callbacks.</summary>

@@ -41,6 +41,11 @@ public:
 
     /// A borderless topmost window exactly covering `rect` (desktop pixels); null on failure.
     [[nodiscard]] HWND create_window(const MonitorRect& rect, bool visible);
+    /// (fork) A normal fixed-size window with a caption, centered on `monitor_rect` with a client
+    /// area of `client`; the streamed screen sits on the desktop instead of covering a display.
+    /// Null on failure.
+    [[nodiscard]] HWND create_windowed_window(const MonitorRect& monitor_rect, const SIZE& client,
+                                              bool visible);
     void destroy_window(HWND window);
     /// Asynchronous, so a decode thread never waits for the UI thread to repaint.
     static void show_window(HWND window, bool visible);

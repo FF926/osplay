@@ -80,8 +80,9 @@ std::wstring widen(const std::string& text) {
 class WindowsViewerStream final : public ViewerStream {
 public:
     WindowsViewerStream(PresentationThread& presentation, const osplay_stream_config& stream,
-                        const ViewerMonitor& monitor, ViewerStreamSink& sink)
-        : presentation_(&presentation), sink_(&sink), stream_(stream), monitor_(monitor) {}
+                        const ViewerMonitor& monitor, ViewerStreamSink& sink, bool windowed)
+        : presentation_(&presentation), sink_(&sink), stream_(stream), monitor_(monitor),
+          windowed_(windowed) {}
 
     ~WindowsViewerStream() override {
         try {
@@ -107,7 +108,15 @@ public:
 
     /// Creates the window and starts the decode thread; waits until the decoder is ready.
     std::optional<PipelineError> start(bool visible) {
-        window_ = presentation_->create_window(monitor_.rect, visible);
+        // (fork) Windowed mode: a normal fixed-size window with a caption, centered on the
+        // monitor the stream would have covered — the streamed screen sits on the desktop and
+        // moves with it instead of covering a display.
+        window_ = windowed_ ? presentation_->create_windowed_window(
+                                  monitor_.rect,
+                                  SIZE{.cx = static_cast<LONG>(stream_.width),
+                                       .cy = static_cast<LONG>(stream_.height)},
+                                  visible)
+                            : presentation_->create_window(monitor_.rect, visible);
         if (window_ == nullptr) {
             return PipelineError::PresentationFailed;
         }
@@ -566,6 +575,7 @@ private:
     ViewerStreamSink* sink_;           // never null
     osplay_stream_config stream_;
     ViewerMonitor monitor_;
+    bool windowed_ = false; ///< (fork) present in a window instead of covering a monitor
     HWND window_ = nullptr;
 
     // Decode thread only.

@@ -14,9 +14,10 @@ namespace osplay::engine {
 
 class WindowsViewerStreamFactory final : public ViewerStreamFactory {
 public:
-    /// `presentation` must outlive every stream this factory starts.
-    explicit WindowsViewerStreamFactory(PresentationThread& presentation)
-        : presentation_(&presentation) {}
+    /// `presentation` must outlive every stream this factory starts. `windowed` (fork) presents in
+    /// a normal window instead of covering a monitor.
+    explicit WindowsViewerStreamFactory(PresentationThread& presentation, bool windowed = false)
+        : presentation_(&presentation), windowed_(windowed) {}
 
     win::Expected<std::unique_ptr<ViewerStream>, PipelineError>
     start(const osplay_stream_config& stream, const ViewerMonitor& monitor, bool visible,
@@ -24,6 +25,7 @@ public:
 
 private:
     PresentationThread* presentation_; // never null
+    bool windowed_ = false;            // (fork) present in a window instead of covering a monitor
 };
 
 } // namespace osplay::engine

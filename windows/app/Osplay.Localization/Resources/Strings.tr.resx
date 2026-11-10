@@ -261,6 +261,12 @@
   <data name="SettingsStatsOverlayDetail" xml:space="preserve">
     <value>Saniyedeki kare, bit hızı, gidiş-dönüş süresi, kayıp ve gecikme sol üst köşede gösterilir.</value>
   </data>
+  <data name="SettingsViewerInWindow" xml:space="preserve">
+    <value>Uzak ekranı tam ekran yerine bir pencerede göster</value>
+  </data>
+  <data name="SettingsViewerInWindowDetail" xml:space="preserve">
+    <value>Yayınlanan ekran, masaüstünde taşınabilen bir pencere olarak açılır.</value>
+  </data>
   <data name="SettingsHotkey" xml:space="preserve">
     <value>Ekranı gizle ve göster</value>
   </data>

@@ -119,6 +119,7 @@ struct osplay_engine_viewer final : private osplay::engine::ViewerObserver {
     std::unique_ptr<osplay::engine::ViewerOrchestrator> orchestrator;
     osplay_session* session = nullptr;
     osplay::engine::SessionTrust trust; ///< answers trust when started with the stored identity
+    bool windowed = false; ///< (fork) present in a window instead of covering a monitor
 
     /// Guards `active`: the UI thread reaches the orchestrator only while it exists.
     std::mutex active_mutex;
@@ -306,6 +307,7 @@ osplay_engine_result osplay_engine_viewer_start(const osplay_engine_viewer_confi
             return OSPLAY_ENGINE_ERROR_INVALID_ARGUMENT;
         }
         auto viewer = std::make_unique<osplay_engine_viewer>(*callbacks);
+        viewer->windowed = config->windowed != 0;
         osplay::engine::KeyStoreError store_failure{};
         auto secret = viewer->trust.secret_for(config->secret_key, store_failure);
         if (!secret) {
@@ -343,8 +345,8 @@ osplay_engine_result osplay_engine_viewer_start(const osplay_engine_viewer_confi
                     },
             },
             hotkey_of(*config));
-        viewer->streams =
-            std::make_unique<osplay::engine::WindowsViewerStreamFactory>(*viewer->presentation);
+        viewer->streams = std::make_unique<osplay::engine::WindowsViewerStreamFactory>(
+            *viewer->presentation, viewer->windowed);
         std::vector<osplay::engine::ViewerMonitor> monitors;
         std::vector<osplay_monitor> descriptions;
         for (const OfferedMonitor& monitor : viewer->offered) {

@@ -46,6 +46,25 @@ HWND PresentationThread::create_window(const MonitorRect& rect, bool visible) {
     return window;
 }
 
+HWND PresentationThread::create_windowed_window(const MonitorRect& monitor_rect, const SIZE& client,
+                                                bool visible) {
+    HWND window = nullptr;
+    invoke([&] {
+        // (fork) A normal fixed-size window with a caption: the streamed screen sits on the
+        // desktop and moves with it instead of covering a display. The flip-model swap chain is
+        // kept (no redirection surface); topmost and tool-window styles are dropped.
+        const int x = monitor_rect.left +
+                      static_cast<int>((monitor_rect.right - monitor_rect.left) - client.cx) / 2;
+        const int y = monitor_rect.top +
+                      static_cast<int>((monitor_rect.bottom - monitor_rect.top) - client.cy) / 2;
+        window = CreateWindowExW(
+            WS_EX_NOREDIRECTIONBITMAP, kViewerClass, L"Osplay",
+            WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX | (visible ? WS_VISIBLE : 0U),
+            x, y, client.cx, client.cy, nullptr, nullptr, GetModuleHandleW(nullptr), nullptr);
+    });
+    return window;
+}
+
 void PresentationThread::destroy_window(HWND window) {
     invoke([window] { DestroyWindow(window); });
 }

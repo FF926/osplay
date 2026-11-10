@@ -723,7 +723,7 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
             }
             ErrorMessage = null;
             HotkeyGesture hotkey = _settings.ViewerHotkey;
-            var options = new ViewerOptions(_deviceName, device.Address, device.Port, offered, hotkey.Modifiers, hotkey.VirtualKey);
+            var options = new ViewerOptions(_deviceName, device.Address, device.Port, offered, hotkey.Modifiers, hotkey.VirtualKey, _settings.DisplayWindowed);
             (EngineResult started, EngineViewer? viewer) = await EngineViewer.StartAsync(_dispatcher, options).ConfigureAwait(true);
             if (viewer is null)
             {

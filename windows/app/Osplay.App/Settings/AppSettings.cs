@@ -37,6 +37,10 @@ public sealed partial class AppSettings : ObservableObject
     [ObservableProperty]
     private bool _showsStatsOverlay;
 
+    /// <summary>(fork) Shows the remote screen in a movable window instead of full screen.</summary>
+    [ObservableProperty]
+    private bool _displayWindowed;
+
     [ObservableProperty]
     private bool _checksForUpdates = true;
 
@@ -99,6 +103,7 @@ public sealed partial class AppSettings : ObservableObject
                 ? HotkeyGesture.Default
                 : new HotkeyGesture(stored.HotkeyModifiers, stored.HotkeyKey);
             ShowsStatsOverlay = stored.ShowsStatsOverlay;
+            DisplayWindowed = stored.DisplayWindowed;
             ChecksForUpdates = stored.ChecksForUpdates;
             LastUpdateCheck = stored.LastUpdateCheck;
             ExcludedMonitors = stored.ExcludedMonitors ?? [];
@@ -122,7 +127,7 @@ public sealed partial class AppSettings : ObservableObject
         var stored = new Stored(
             Quality, ViewerHotkey.Modifiers, ViewerHotkey.VirtualKey, ShowsStatsOverlay, ChecksForUpdates, LastUpdateCheck,
             [.. ExcludedMonitors], SwapHotkey.Modifiers, SwapHotkey.VirtualKey,
-            StatsHotkey.Modifiers, StatsHotkey.VirtualKey, StreamSize, PcNetworkName, PcNetworkPassword);
+            StatsHotkey.Modifiers, StatsHotkey.VirtualKey, StreamSize, PcNetworkName, PcNetworkPassword, DisplayWindowed);
         try
         {
             _ = Directory.CreateDirectory(Path.GetDirectoryName(_path)!);
@@ -139,5 +144,5 @@ public sealed partial class AppSettings : ObservableObject
         DateTimeOffset? LastUpdateCheck, List<string>? ExcludedMonitors,
         uint SwapModifiers = 0, uint SwapKey = 0, uint StatsModifiers = 0, uint StatsKey = 0,
         StreamSizePreset StreamSize = StreamSizePreset.Hd1080, string? PcNetworkName = null,
-        string? PcNetworkPassword = null);
+        string? PcNetworkPassword = null, bool DisplayWindowed = false);
 }

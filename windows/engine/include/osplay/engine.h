@@ -346,6 +346,8 @@ typedef struct osplay_engine_viewer_config {
     /* Hide/show hotkey: RegisterHotKey MOD_* bits and a virtual-key code; 0 and 0: default. */
     uint32_t hotkey_modifiers;
     uint32_t hotkey_key;
+    /* (fork) Non-zero: present in a normal movable window instead of covering a monitor. */
+    int windowed;
 } osplay_engine_viewer_config;
 
 /* Callbacks run on engine threads and must return quickly; they must not call

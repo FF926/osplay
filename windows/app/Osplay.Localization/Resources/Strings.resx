@@ -261,6 +261,12 @@
   <data name="SettingsStatsOverlayDetail" xml:space="preserve">
     <value>Frames per second, bitrate, round trip, loss and latency in the top-left corner.</value>
   </data>
+  <data name="SettingsViewerInWindow" xml:space="preserve">
+    <value>Show the remote screen in a window instead of full screen</value>
+  </data>
+  <data name="SettingsViewerInWindowDetail" xml:space="preserve">
+    <value>The streamed screen opens as a movable window on the desktop.</value>
+  </data>
   <data name="SettingsHotkey" xml:space="preserve">
     <value>Hide and show the display</value>
   </data>

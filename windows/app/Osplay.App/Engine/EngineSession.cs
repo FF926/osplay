@@ -334,7 +334,7 @@ internal sealed unsafe class EngineHost : EngineSession
 /// <summary>Where and how a viewer session runs.</summary>
 internal sealed record ViewerOptions(
     string DeviceName, string Address, ushort Port, IReadOnlyList<byte> MonitorIds, uint HotkeyModifiers,
-    uint HotkeyKey);
+    uint HotkeyKey, bool Windowed = false);
 
 /// <summary>Windows shows a remote screen on its monitors.</summary>
 internal sealed unsafe class EngineViewer : EngineSession
@@ -378,6 +378,7 @@ internal sealed unsafe class EngineViewer : EngineSession
                         MonitorIdCount = (nuint)monitors.Length,
                         HotkeyModifiers = options.HotkeyModifiers,
                         HotkeyKey = options.HotkeyKey,
+                        Windowed = options.Windowed ? 1 : 0,
                     };
                     var callbacks = new NativeViewerCallbacks
                     {
