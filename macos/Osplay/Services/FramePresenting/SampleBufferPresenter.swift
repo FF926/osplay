@@ -117,8 +117,8 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
             let screen = NSScreen.main
             let screenFrame = screen?.visibleFrame ?? NSRect(origin: .zero, size: CGSize(width: 1600, height: 900))
             let size = CGSize(
-                width: min(CGDouble(stream.width), screenFrame.width * 0.8),
-                height: min(CGDouble(stream.height), screenFrame.height * 0.8))
+                width: min(CGFloat(stream.width), screenFrame.width * 0.8),
+                height: min(CGFloat(stream.height), screenFrame.height * 0.8))
             let window = NSWindow(
                 contentRect: CGRect(origin: .zero, size: size),
                 styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered,
