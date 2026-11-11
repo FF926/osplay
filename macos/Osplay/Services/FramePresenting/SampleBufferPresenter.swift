@@ -111,9 +111,9 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
             window.isReleasedWhenClosed = false
             return window
         case .window(let title):
-            // (fork) A movable, resizable window for the streamed screen: no aspect-ratio lock,
-            // so the user can resize it freely or take it fullscreen (green button) to fill the
-            // display. The video layer scales with .resizeAspect, so there is no distortion.
+            // (fork) A movable, resizable window for the streamed screen: the green button
+            // toggles fullscreen to fill the display, or the user can resize it freely on the
+            // desktop. The video layer scales with .resizeAspect, so there is no distortion.
             let screen = NSScreen.main
             let screenFrame = screen?.visibleFrame ?? NSRect(origin: .zero, size: CGSize(width: 1600, height: 900))
             let size = CGSize(
@@ -127,6 +127,12 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
             window.backgroundColor = NSColor(Theme.Viewer.background)
             window.isReleasedWhenClosed = false
             window.center()
+            // (fork) A contentViewController makes macOS enable the green button as fullscreen
+            // (instead of zoom), and .fullScreenPrimary makes this window the fullscreen target.
+            let controller = NSViewController(nibName: nil, bundle: nil)
+            controller.view = content
+            window.contentViewController = controller
+            window.collectionBehavior = [.fullScreenPrimary]
             return window
         }
     }
