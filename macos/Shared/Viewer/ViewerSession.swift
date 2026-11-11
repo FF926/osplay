@@ -161,6 +161,13 @@ actor ViewerSession {
         await setVisible(!visible)
     }
 
+    /// (fork) Toggles each display between windowed and fullscreen (own Space).
+    func toggleFullScreen() {
+        for (_, stream) in streams {
+            Task { @MainActor in stream.presenter.toggle_fullscreen() }
+        }
+    }
+
     var isVisible: Bool { visible }
 
     /// Ends the session with Bye; `run` returns once the core reports `.closed`.

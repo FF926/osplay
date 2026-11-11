@@ -57,6 +57,8 @@ protocol FramePresenting: AnyObject, Sendable {
     func show()
     func hide()
     func close()
+    /// (fork) Toggles the presenter window between windowed and fullscreen (own Space).
+    func toggle_fullscreen()
     func setCursorShape(_ shape: CursorShape)
     func moveCursor(_ position: CursorPosition)
     /// Shows the stats overlay with these figures, or hides it for nil.

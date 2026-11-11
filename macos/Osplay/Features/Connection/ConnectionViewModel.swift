@@ -138,6 +138,8 @@ final class ConnectionViewModel {
     /// Viewing after a swap: connects to this device as soon as Bonjour finds it.
     private var autoConnectDeviceID: String?
     private var autoConnectTimeout: Task<Void, Never>?
+    /// (fork) Fullscreen toggle for the viewer: fills an entire display (own Space).
+    private var fullScreenHotkey: HotkeyRegistration?
     /// (fork) The last computer each peer was seen as: a swap connects straight to it instead of
     /// waiting for Bonjour.
     private var lastSeenDevices: [String: DiscoveredDevice] = [:]
@@ -785,6 +787,8 @@ final class ConnectionViewModel {
         hotkey = nil
         if let statsHotkey { dependencies.hotkeys.unregister(statsHotkey) }
         statsHotkey = nil
+        if let fullScreenHotkey { dependencies.hotkeys.unregister(fullScreenHotkey) }
+        fullScreenHotkey = nil
         hotkeyUnavailable = false
         unregisterSwapHotkey()
         viewerTasks.forEach { $0.cancel() }
@@ -1032,6 +1036,13 @@ final class ConnectionViewModel {
             [settings = dependencies.settings] in
             MenuWindow.close()
             settings.showsStatsOverlay.toggle()
+        }
+        // (fork) Fullscreen toggle: ⌃⌥⌘F makes the viewer window fill an entire display (own
+        // Space) or return to windowed mode.
+        fullScreenHotkey = try? dependencies.hotkeys.register(
+            Hotkey(keyCode: 0x03, modifiers: [.command, .option, .control])) {
+            MenuWindow.close()
+            Task { await session.toggleFullScreen() }
         }
     }
 

@@ -53,6 +53,11 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
         window.close()
     }
 
+    /// (fork) Toggles the window between windowed and fullscreen (own Space).
+    func toggle_fullscreen() {
+        window.toggleFullScreen(nil)
+    }
+
     func setCursorShape(_ shape: CursorShape) {
         cursorShape = shape
         content.cursorLayer.contents = CursorImage.make(shape)
