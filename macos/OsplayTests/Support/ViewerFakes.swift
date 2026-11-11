@@ -124,6 +124,7 @@ final class FakePresenter: FramePresenting {
         isShown = false
         isClosed = true
     }
+    func toggleFullScreen() { }
     func setCursorShape(_ shape: CursorShape) { cursorShapes.append(shape.shapeID) }
     func moveCursor(_ position: CursorPosition) { cursorPositions.append(position) }
     private(set) var stats: [StatsFigures?] = []
