@@ -115,8 +115,7 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
             // so the user can resize it freely or take it fullscreen (green button) to fill the
             // display. The video layer scales with .resizeAspect, so there is no distortion.
             let screen = NSScreen.main
-            let screenFrame = screen?.visibleFrame
-                ?? NSRect(origin: .zero, size: CGSize(width: 1600, height: 900))
+            let screenFrame = screen?.visibleFrame ?? NSRect(origin: .zero, size: CGSize(width: 1600, height: 900))
             let size = CGSize(
                 width: min(CGDouble(stream.width), screenFrame.width * 0.8),
                 height: min(CGDouble(stream.height), screenFrame.height * 0.8))
