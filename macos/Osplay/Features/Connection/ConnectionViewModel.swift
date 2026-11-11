@@ -805,13 +805,19 @@ final class ConnectionViewModel {
             return
         }
         // Sleep, a network change or a display change: wait for the same host and connect again.
-        let expectedBack = resumes || failure == .peerSleeping || failure == .timedOut || failure == .network
+        // (fork) A closed connection after a swap is also worth waiting for: the other computer is
+        // becoming the host and listens again within seconds.
+        let expectedBack =
+            resumes || failure == .peerSleeping || failure == .timedOut || failure == .network
+            || failure == .connectionClosed
         if let host, expectedBack, !endedByUser, mode == .viewing {
             status = .reconnecting(peer: host.name)
             reconnectTask?.cancel()
             reconnectTask = Task { [weak self] in
                 try? await Task.sleep(for: Tunables.Connection.reconnectDelay)
                 guard !Task.isCancelled, let self, mode == .viewing, viewer == nil else { return }
+                // (fork) The host may listen again on its last address before Bonjour catches up.
+                if let last = lastSeenDevices[host.deviceID] { connect(to: last) }
                 awaitHost(host.deviceID, timeout: nil)
             }
             return
@@ -821,6 +827,7 @@ final class ConnectionViewModel {
 
     private func viewerConnected() {
         status = .connected(peer: peerName)
+        autoConnectDeviceID = nil  // reached the host we were waiting for
         updateSwapHotkey()
         if let key = viewerPeer.key {
             update { () throws(KeyStoreError) in try trust.seen(key) }
@@ -899,9 +906,8 @@ final class ConnectionViewModel {
     /// viewing stays on. A direct connect that is already talking to the host wins over this.
     private func awaitHost(_ deviceID: String, timeout: Duration?, onTimeout: (() -> Void)? = nil) {
         autoConnectTimeout?.cancel()
-        if viewer != nil {
-            return  // (fork) the direct connect already got in; nothing to wait for
-        }
+        // (fork) The wait stays armed even while a direct connect is alive: `connect` refuses a
+        // second session, so a found host is ignored then, and the timeout checks `viewer`.
         if let device = devices.first(where: { $0.advertisement.deviceID == deviceID }) {
             autoConnectDeviceID = nil
             connect(to: device)
@@ -980,17 +986,20 @@ final class ConnectionViewModel {
         guard let swap = pendingSwap else { return }
         pendingSwap = nil
         setMode(swap.role)
+        endedByUser = false  // stopAll marks a user end; a swap is not one
         guard swap.role == .viewing else { return }
         status = .swapping(peer: swap.peerName)
         // (fork) The new host listens on its last known address and port within a second or two:
-        // connecting straight there beats waiting for Bonjour. The discovery wait below stays as
-        // the fallback for when that address has changed.
+        // connecting straight there beats waiting for Bonjour. When that connect dies against a
+        // listener that is not up yet, the reconnect path tries the address again; the discovery
+        // wait below stays as the fallback for when the address has changed.
         if let last = lastSeenDevices[swap.peerDeviceID] {
             connect(to: last)
         }
         awaitHost(swap.peerDeviceID, timeout: Tunables.Connection.swapReconnectTimeout) { [weak self] in
-            self?.error = .roleSwapPeerNotFound
-            self?.status = .idle
+            guard let self, self.viewer == nil else { return }  // connected meanwhile
+            self.error = .roleSwapPeerNotFound
+            self.status = .idle
         }
     }
 

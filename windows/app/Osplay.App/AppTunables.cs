@@ -21,6 +21,9 @@ internal static class AppTunables
     /// <summary>After a role swap, how long viewing waits for the other computer to advertise itself.</summary>
     public static readonly TimeSpan SwapReconnectTimeout = TimeSpan.FromSeconds(20);
 
+    /// <summary>(fork) After a swap, the pause before sharing tries its listener again when the helper or the virtual display did not come up.</summary>
+    public static readonly TimeSpan SwapListenRetryDelay = TimeSpan.FromSeconds(2);
+
     /// <summary>The log file is rolled over at this size; one older file is kept.</summary>
     public const long LogFileLimitBytes = 5 * 1024 * 1024;
 

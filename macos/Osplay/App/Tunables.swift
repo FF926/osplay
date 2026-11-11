@@ -63,7 +63,8 @@ extension Tunables {
         /// Pause before sharing listens again after a session ended.
         static let relistenDelay: Duration = .seconds(1)
         /// After a role swap, how long viewing waits for the other computer to advertise itself.
-        static let swapReconnectTimeout: Duration = .seconds(20)
+        /// (fork) Long enough for the helper and the virtual display to come up on a slow machine.
+        static let swapReconnectTimeout: Duration = .seconds(30)
         /// Pause before a dropped viewer tries its host again (an old advertisement can refuse at
         /// once; this keeps that from becoming a tight loop).
         static let reconnectDelay: Duration = .seconds(2)

@@ -869,6 +869,17 @@ public sealed partial class ConnectionViewModel : ObservableObject, IDisposable
             return;
         }
         await SwitchModeAsync(swap.Role).ConfigureAwait(true);
+        if (swap.Role == ConnectionMode.Sharing && Mode != ConnectionMode.Sharing)
+        {
+            // (fork) The helper and the virtual display can need a moment right after a swap, and
+            // the other computer is already waiting to connect: start sharing again before
+            // giving up.
+            for (int attempt = 0; attempt < 2 && Mode != ConnectionMode.Sharing; attempt++)
+            {
+                await Task.Delay(AppTunables.SwapListenRetryDelay).ConfigureAwait(true);
+                await SwitchModeAsync(ConnectionMode.Sharing).ConfigureAwait(true);
+            }
+        }
         if (swap.Role != ConnectionMode.Viewing || Mode != ConnectionMode.Viewing)
         {
             return;
