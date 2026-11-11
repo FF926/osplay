@@ -1040,7 +1040,8 @@ final class ConnectionViewModel {
         // (fork) Fullscreen toggle: ⌃⌥⌘F makes the viewer window fill an entire display (own
         // Space) or return to windowed mode.
         fullScreenHotkey = try? dependencies.hotkeys.register(
-            Hotkey(keyCode: 0x03, modifiers: [.command, .option, .control])) {
+            Hotkey(keyCode: 0x03, modifiers: [.command, .option, .control])
+        ) {
             MenuWindow.close()
             Task { await session.toggleFullScreen() }
         }

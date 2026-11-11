@@ -54,7 +54,7 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
     }
 
     /// (fork) Toggles the window between windowed and fullscreen (own Space).
-    func toggle_fullscreen() {
+    func toggleFullScreen() {
         window.toggleFullScreen(nil)
     }
 
