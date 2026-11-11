@@ -111,12 +111,20 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
             window.isReleasedWhenClosed = false
             return window
         case .window(let title):
-            let size = Tunables.Viewer.loopbackWindowSize(streamWidth: stream.width, streamHeight: stream.height)
+            // (fork) A movable, resizable window for the streamed screen: no aspect-ratio lock,
+            // so the user can resize it freely or take it fullscreen (green button) to fill the
+            // display. The video layer scales with .resizeAspect, so there is no distortion.
+            let screen = NSScreen.main
+            let screenFrame = screen?.visibleFrame
+                ?? NSRect(origin: .zero, size: CGSize(width: 1600, height: 900))
+            let size = CGSize(
+                width: min(CGDouble(stream.width), screenFrame.width * 0.8),
+                height: min(CGDouble(stream.height), screenFrame.height * 0.8))
             let window = NSWindow(
                 contentRect: CGRect(origin: .zero, size: size),
-                styleMask: [.titled, .closable, .resizable, .miniaturizable], backing: .buffered, defer: false)
+                styleMask: [.titled, .closable, .miniaturizable, .resizable], backing: .buffered,
+                defer: false)
             window.title = title
-            window.contentAspectRatio = CGSize(width: stream.width, height: stream.height)
             window.backgroundColor = NSColor(Theme.Viewer.background)
             window.isReleasedWhenClosed = false
             window.center()
