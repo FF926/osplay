@@ -33,7 +33,7 @@ final class PadPresenter: FramePresenting {
     }
 
     /// (fork) iPad has no Space concept; fullscreen toggle is a no-op.
-    func toggleFullScreen() { }
+    func toggleFullScreen() {}
 
     func setCursorShape(_ shape: CursorShape) {
         cursorShape = shape
