@@ -24,6 +24,12 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
         window = Self.makeWindow(target: target, stream: stream)
         super.init()
         window.contentView = content
+        // (fork) A contentViewController makes macOS enable the green button as fullscreen
+        // (instead of zoom), and .fullScreenPrimary makes this window the fullscreen target.
+        let controller = NSViewController(nibName: nil, bundle: nil)
+        controller.view = content
+        window.contentViewController = controller
+        window.collectionBehavior = [.fullScreenPrimary]
     }
 
     func show() {
@@ -127,12 +133,6 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
             window.backgroundColor = NSColor(Theme.Viewer.background)
             window.isReleasedWhenClosed = false
             window.center()
-            // (fork) A contentViewController makes macOS enable the green button as fullscreen
-            // (instead of zoom), and .fullScreenPrimary makes this window the fullscreen target.
-            let controller = NSViewController(nibName: nil, bundle: nil)
-            controller.view = content
-            window.contentViewController = controller
-            window.collectionBehavior = [.fullScreenPrimary]
             return window
         }
     }
