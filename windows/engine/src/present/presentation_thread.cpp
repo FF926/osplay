@@ -1,6 +1,7 @@
 #include "present/presentation_thread.hpp"
 
 #include <exception>
+#include <unordered_map>
 #include <utility>
 
 namespace osplay::engine {
@@ -10,6 +11,50 @@ constexpr const wchar_t* kControlClass = L"OsplayViewerControl";
 constexpr const wchar_t* kViewerClass = L"OsplayViewerWindow";
 constexpr UINT kTaskMessage = WM_APP + 1;
 constexpr int kHotkeyId = 1;
+
+/// (fork) Placements of windowed viewer windows that are in fullscreen right now. Only touched on
+/// the presentation thread, where every message arrives.
+std::unordered_map<HWND, WINDOWPLACEMENT>& saved_placements() {
+    static std::unordered_map<HWND, WINDOWPLACEMENT> placements;
+    return placements;
+}
+
+/// (fork) Toggles a windowed viewer between its captioned frame and borderless fullscreen that
+/// covers the monitor it is on, taskbar included — the twin of the Mac viewer's ⌃⌥⌘F. F11 or
+/// double-clicking the video toggles; Esc only leaves fullscreen. The full-screen overlay windows
+/// of the non-windowed mode have neither a caption nor a saved placement, so this is a no-op for
+/// them.
+void toggle_fullscreen(HWND window, bool leave_only) {
+    const LONG_PTR style = GetWindowLongPtrW(window, GWL_STYLE);
+    auto& placements = saved_placements();
+    if ((style & WS_CAPTION) != 0) {
+        if (leave_only) {
+            return;
+        }
+        WINDOWPLACEMENT placement{.length = sizeof(WINDOWPLACEMENT)};
+        if (GetWindowPlacement(window, &placement) == 0) {
+            return;
+        }
+        MONITORINFO monitor{.cbSize = sizeof(MONITORINFO)};
+        if (GetMonitorInfoW(MonitorFromWindow(window, MONITOR_DEFAULTTONEAREST), &monitor) == 0) {
+            return;
+        }
+        placements.insert_or_assign(window, placement);
+        SetWindowLongPtrW(window, GWL_STYLE, style & ~WS_OVERLAPPEDWINDOW);
+        SetWindowPos(window, HWND_TOP, monitor.rcMonitor.left, monitor.rcMonitor.top,
+                     monitor.rcMonitor.right - monitor.rcMonitor.left,
+                     monitor.rcMonitor.bottom - monitor.rcMonitor.top,
+                     SWP_NOOWNERZORDER | SWP_FRAMECHANGED);
+        return;
+    }
+    const auto placement = placements.find(window);
+    if (placement == placements.end()) {
+        return;
+    }
+    placements.erase(window);
+    SetWindowLongPtrW(window, GWL_STYLE, style | WS_OVERLAPPEDWINDOW);
+    SetWindowPlacement(window, &placement->second);
+}
 
 } // namespace
 
@@ -93,6 +138,7 @@ void PresentationThread::run(Hotkey hotkey, std::promise<bool> ready) {
     HINSTANCE instance = GetModuleHandleW(nullptr);
     WNDCLASSEXW window_class{};
     window_class.cbSize = sizeof(window_class);
+    window_class.style = CS_DBLCLKS; // (fork) double-clicking a windowed viewer toggles fullscreen
     window_class.lpfnWndProc = window_procedure;
     window_class.hInstance = instance;
     window_class.lpszClassName = kControlClass;
@@ -152,9 +198,25 @@ LRESULT CALLBACK PresentationThread::window_procedure(HWND window, UINT message,
         }
         return 0;
     case WM_SETCURSOR:
-        if (self == nullptr) {
-            SetCursor(nullptr); // no local pointer over a viewer window
+        // No local pointer over a viewer window; a windowed viewer keeps the normal cursor, so
+        // the desktop window behaves like any other.
+        if (self == nullptr && (GetWindowLongPtrW(window, GWL_STYLE) & WS_CAPTION) == 0) {
+            SetCursor(nullptr);
             return TRUE;
+        }
+        break;
+    case WM_KEYDOWN:
+        // (fork) F11 toggles fullscreen and Esc leaves it, once the window has focus (a click
+        // inside it). Viewer windows only; the control window never has keyboard focus anyway.
+        if (self == nullptr && (wparam == VK_F11 || wparam == VK_ESCAPE)) {
+            toggle_fullscreen(window, wparam == VK_ESCAPE);
+            return 0;
+        }
+        break;
+    case WM_LBUTTONDBLCLK:
+        if (self == nullptr) {
+            toggle_fullscreen(window, false);
+            return 0;
         }
         break;
     case WM_ERASEBKGND:
@@ -166,6 +228,8 @@ LRESULT CALLBACK PresentationThread::window_procedure(HWND window, UINT message,
         }
         return 0; // viewer windows ignore Alt+F4: the hotkey or the session closes them
     case WM_DESTROY:
+        // (fork) A window closed while fullscreen takes its saved placement with it.
+        saved_placements().erase(window);
         if (self != nullptr) {
             PostQuitMessage(0);
         }
