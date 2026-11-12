@@ -15,6 +15,8 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
     private var cursorShape: CursorShape?
     private var cursorPosition: CursorPosition?
     private var idleTimer: Timer?
+    /// (fork) Fullscreen state of `window`; drives the video gravity.
+    private var fullScreenObservers: [NSObjectProtocol] = []
 
     init(stream: StreamConfiguration, target: PresentationTarget) {
         self.stream = stream
@@ -30,6 +32,21 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
         controller.view = content
         window.contentViewController = controller
         window.collectionBehavior = [.fullScreenPrimary]
+        // (fork) Fullscreen means the whole display, like the non-windowed mode was: stretch the
+        // video to fill it instead of keeping the aspect ratio with black bars (a saved custom
+        // resolution rarely matches this display's aspect). Windowed keeps the aspect ratio.
+        fullScreenObservers = [
+            NotificationCenter.default.addObserver(
+                forName: NSWindow.willEnterFullScreenNotification, object: window, queue: .main
+            ) { _ in
+                MainActor.assumeIsolated { [weak self] in self?.setVideoFillsDisplay(true) }
+            },
+            NotificationCenter.default.addObserver(
+                forName: NSWindow.willExitFullScreenNotification, object: window, queue: .main
+            ) { _ in
+                MainActor.assumeIsolated { [weak self] in self?.setVideoFillsDisplay(false) }
+            },
+        ]
     }
 
     func show() {
@@ -49,8 +66,15 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
 
     func close() {
         idleTimer?.invalidate()
+        fullScreenObservers.forEach { NotificationCenter.default.removeObserver($0) }
+        fullScreenObservers = []
         content.displayLayer.sampleBufferRenderer.flush(removingDisplayedImage: true, completionHandler: nil)
         window.close()
+    }
+
+    /// (fork) Stretches the video edge to edge while fullscreen, aspect-fit again when windowed.
+    private func setVideoFillsDisplay(_ fills: Bool) {
+        content.displayLayer.videoGravity = fills ? .resize : .resizeAspect
     }
 
     /// (fork) Toggles the window between windowed and fullscreen (own Space).
