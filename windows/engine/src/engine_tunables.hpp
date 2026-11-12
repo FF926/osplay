@@ -19,8 +19,10 @@ inline constexpr std::size_t kMaxHostStreams = 4;
 inline constexpr double kBitsPerPixel = 0.1;
 inline constexpr double kMinBitsPerPixel = 0.02;
 inline constexpr double kMaxBitsPerPixel = 0.3;
-/// Host: streams never exceed this rate, whatever the viewer's monitor runs at.
-inline constexpr std::uint32_t kMaxStreamRefreshMillihertz = 60'000;
+/// Host: streams never exceed this rate, whatever the viewer's monitor runs at. (fork) 120 Hz —
+/// the RTX-class GPUs this fork's users pair with NVENC-encode it easily, and the bitrate in
+/// stream_for() scales with the rate, so the network budget follows automatically.
+inline constexpr std::uint32_t kMaxStreamRefreshMillihertz = 120'000;
 inline constexpr std::uint32_t kMinBitrateKbps = 2'000;
 inline constexpr std::uint32_t kMaxBitrateKbps = 80'000;
 
