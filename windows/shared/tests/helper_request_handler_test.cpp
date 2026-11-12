@@ -110,9 +110,25 @@ TEST_F(RequestHandlerTest, EnableWithoutConfigurationIsRefused) {
 TEST_F(RequestHandlerTest, MissingDriverIsReported) {
     devices.enabled.clear();
     EXPECT_EQ(handler.handle(configure_request()).result, ResultCode::Ok);
-    EXPECT_EQ(handler.handle(enable(0b1)).result, ResultCode::VddNotInstalled);
     EXPECT_EQ(handler.handle(disable(0b1)).result, ResultCode::VddNotInstalled);
     EXPECT_FALSE(handler.handle(simple(Command::Status)).status.vdd_installed);
+}
+
+// (fork) A cleanup that removed every node heals on the next connection: enable() installs a
+// fresh one from the driver package in the store instead of answering "driver not installed".
+TEST_F(RequestHandlerTest, EnableAddsANodeBackWhenEveryNodeIsGone) {
+    devices.enabled.clear();
+    EXPECT_EQ(handler.handle(configure_request()).result, ResultCode::Ok);
+    EXPECT_EQ(handler.handle(enable(0b1)).result, ResultCode::Ok);
+    EXPECT_EQ(devices.added, 1);
+    EXPECT_EQ(devices.enabled, (std::vector<bool>{true}));
+}
+
+TEST_F(RequestHandlerTest, MissingDriverIsFinalOnlyWhenAddingFails) {
+    devices.enabled.clear();
+    devices.fail_add = true;
+    EXPECT_EQ(handler.handle(configure_request()).result, ResultCode::Ok);
+    EXPECT_EQ(handler.handle(enable(0b1)).result, ResultCode::VddNotInstalled);
 }
 
 TEST_F(RequestHandlerTest, ConfiguringLeavesRunningMonitorsAlone) {
