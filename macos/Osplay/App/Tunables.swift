@@ -90,8 +90,10 @@ extension Tunables {
         /// Viewer monitors scaled at least this much start in the crisp HiDPI resolution; others
         /// start at one point per pixel.
         static let hiDPIMinimumScalePercent = 150
-        /// Streams never exceed this rate; 120 Hz capture runs at ~80 fps on a MacBook Air M3.
-        static let maximumRefreshMillihertz: UInt32 = 60_000
+        /// Streams never exceed this rate. (fork) 120 Hz — the author measured ~80 fps real capture
+        /// against a 120 Hz target on a MacBook Air M3; the pacer just delivers what it can, so a
+        /// high target still beats a 60 Hz one on motion. Revert to 60_000 if hosting misbehaves.
+        static let maximumRefreshMillihertz: UInt32 = 120_000
     }
 
     enum Capture {

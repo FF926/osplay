@@ -315,8 +315,7 @@ actor HostSession {
         heldDisplays = 0
     }
 
-    /// High refresh streams come after the MVP (DEVPLAN): a 120 Hz monitor gets a 60 Hz display and
-    /// stream, which this Mac captures and encodes at full rate.
+    /// (fork) The stream follows the viewer monitor's rate up to the 120 Hz cap in Tunables.
     static func capped(_ monitor: MonitorDescription) -> MonitorDescription {
         MonitorDescription(
             id: monitor.id, widthPixels: monitor.widthPixels, heightPixels: monitor.heightPixels,
