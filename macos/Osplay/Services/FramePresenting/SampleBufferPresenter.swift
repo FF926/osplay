@@ -30,6 +30,11 @@ final class SampleBufferPresenter: NSObject, FramePresenting {
         controller.view = content
         window.contentViewController = controller
         window.collectionBehavior = [.fullScreenPrimary]
+        // (fork) The stream's resolution in the title: a fullscreen window with black bars means
+        // this does not match the display, and the title says at once which size came in.
+        if case .window = target {
+            window.title = "\(window.title) — \(stream.width)×\(stream.height)"
+        }
     }
 
     func show() {

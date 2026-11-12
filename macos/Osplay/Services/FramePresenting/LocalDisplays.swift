@@ -42,7 +42,15 @@ enum LocalDisplays {
 
     /// Every attached display that can be offered.
     static func all() -> [LocalDisplay] {
-        offered(from: NSScreen.screens.compactMap(candidate))
+        offered(from: NSScreen.screens.compactMap(candidate).filter { !isOwnVirtualDisplay($0.displayID) })
+    }
+
+    /// (fork) This Mac's own virtual displays never count as screens a host can take over. One
+    /// left over from a hosting session that ended only moments ago would otherwise be offered to
+    /// the next host: its aspect matches no real screen, and a viewer window of it fullscreened
+    /// shows black bars.
+    private static func isOwnVirtualDisplay(_ displayID: CGDirectDisplayID) -> Bool {
+        CGDisplayVendorNumber(displayID) == VirtualDisplayIdentity.osplayVendorID
     }
 
     /// From left to right (then top to bottom), so the IDs follow the arrangement as on Windows; at
