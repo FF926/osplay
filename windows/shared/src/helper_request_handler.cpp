@@ -94,7 +94,10 @@ Response RequestHandler::configure(const std::vector<MonitorConfig>& monitors) {
 }
 
 Response RequestHandler::enable(std::uint8_t devices) {
-    if (!devices_.is_installed()) {
+    // (fork) A missing device node is not final: add() builds a fresh one from the driver package
+    // in the store, so a cleanup that removed every node heals on the next connection instead of
+    // failing forever with "the virtual display driver is not installed".
+    if (!devices_.is_installed() && !devices_.add()) {
         return with(ResultCode::VddNotInstalled);
     }
     if (monitors_.empty()) {
